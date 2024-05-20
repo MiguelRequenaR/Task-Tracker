@@ -33,7 +33,7 @@ export default function ProjectDetails() {
                 <button 
                     type="button" 
                     className="bg-indigo-400 hover:bg-indigo-600 px-10 py-3 text-white text-xl font-bold cursor-pointer transition-colors"
-                    onClick={() => navigate('?newTask=true')}
+                    onClick={() => navigate(location.pathname + '?newTask=true')}
                 >
                     Add task
                 </button>
