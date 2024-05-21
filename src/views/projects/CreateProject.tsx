@@ -38,7 +38,7 @@ export default function CreateProject() {
                 <p className="text-2xl font-light text-gray-500 mt-5">Complet the Form</p>
                 <nav className="my-5">
                     <Link 
-                    className="bg-indigo-400 hover:bg-indigo-500 px-10 py-3 text-white text-xl font-bold cursor-pointer transition-colors"
+                    className="bg-cyan-600 hover:bg-cyan-700 px-10 py-3 text-white text-xl font-bold cursor-pointer transition-colors"
                     to="/"
                     >
                         Back to Dashboard

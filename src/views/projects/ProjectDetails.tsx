@@ -2,6 +2,7 @@ import { Navigate, useNavigate, useParams } from "react-router-dom"
 import { useQuery } from "@tanstack/react-query";
 import { getProjectById } from "@/api/ProjectApi";
 import AddTaskModal from "@/components/tasks/AddTaskModal";
+import TaskList from "@/components/tasks/TaskList";
 
 export default function ProjectDetails() {
 
@@ -32,12 +33,17 @@ export default function ProjectDetails() {
             <nav className="my-5 flex gap-3">
                 <button 
                     type="button" 
-                    className="bg-indigo-400 hover:bg-indigo-600 px-10 py-3 text-white text-xl font-bold cursor-pointer transition-colors"
+                    className="bg-cyan-400 hover:bg-cyan-600 px-10 py-3 text-white text-xl font-bold cursor-pointer transition-colors"
                     onClick={() => navigate(location.pathname + '?newTask=true')}
                 >
                     Add task
                 </button>
             </nav>
+
+            <TaskList 
+                //Pasamos las tareas del proyecto al componente TaskList
+                tasks={data.tasks}
+            />
 
             <AddTaskModal />
         </>
