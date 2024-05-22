@@ -3,18 +3,19 @@ import { useQuery } from "@tanstack/react-query";
 import { getProjectById } from "@/api/ProjectApi";
 import AddTaskModal from "@/components/tasks/AddTaskModal";
 import TaskList from "@/components/tasks/TaskList";
+import EditTaskData from "@/components/tasks/EditTaskData";
 
 export default function ProjectDetails() {
 
     const navigate = useNavigate();
     const params = useParams();
-    const projetcId = params.projectId!;
+    const projectId = params.projectId!;
 
     //Cuando un funcion recibe parametros esta es la sintaxis a usar con useQuery
     const { data, isLoading, isError } = useQuery({
-        queryKey: ['editProject', projetcId],
+        queryKey: ['project', projectId],
         //cuando se tiene una funcion que toma un parametro se usa callback
-        queryFn: () => getProjectById(projetcId),
+        queryFn: () => getProjectById(projectId),
         retry: false
     })
 
@@ -46,6 +47,8 @@ export default function ProjectDetails() {
             />
 
             <AddTaskModal />
+            {/* Este realiza la consulta con usequery, y trae la info de la tarea a editar */}
+            <EditTaskData />
         </>
     )
 }
