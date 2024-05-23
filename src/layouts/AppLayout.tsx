@@ -26,7 +26,7 @@ export default function AppLayout() {
 
             <footer className="py-5 font-semibold text-gray-600">
                 <p className="text-center">
-                    &copy; 2021 All rights reserved {new Date().getFullYear()}
+                    &copy; 2021 Todos los derechos reservados {new Date().getFullYear()}
                 </p>
             </footer>
             <ToastContainer 

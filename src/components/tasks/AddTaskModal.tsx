@@ -68,7 +68,7 @@ export default function AddTaskModal() {
                         <div className="fixed inset-0 bg-black/60" />
                     </TransitionChild>
 
-                    <div className="fixed inset-0 overflow-y-auto">
+                    <div className="fixed inset-0 overflow-y-auto text-primary">
                         <div className="flex min-h-full items-center justify-center p-4 text-center">
                             <TransitionChild
                                 as={Fragment}
@@ -82,13 +82,13 @@ export default function AddTaskModal() {
                                 <DialogPanel className="w-full max-w-4xl transform overflow-hidden rounded-2xl bg-white text-left align-middle shadow-xl transition-all p-16">
                                     <DialogTitle
                                         as="h3"
-                                        className="font-black text-4xl  my-5"
+                                        className="font-black text-4xl text-primary my-5"
                                     >
-                                        New Task
+                                        Crea una nueva tarea
                                     </DialogTitle>
 
-                                    <p className="text-xl font-bold">Fill out the form and create {''}
-                                        <span className="text-cyan-600">a task.</span>
+                                    <p className="text-xl font-bold">Completa el siguiente formulario {''}
+                                        <span className="text-cyan-600">para crear una tarea</span>
                                     </p>
                                     <form 
                                         className='mt-10 space-y-3'
@@ -101,7 +101,7 @@ export default function AddTaskModal() {
                                         />
                                         <input 
                                             type="submit" 
-                                            value="Save Task"
+                                            value="Guardar tarea"
                                             className="bg-cyan-600 hover:bg-cyan-700 w-full p-3 text-white uppercase font-bold cursor-pointer transition-colors"
                                         />
                                     </form>

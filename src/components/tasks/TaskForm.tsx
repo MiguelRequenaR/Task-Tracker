@@ -14,14 +14,14 @@ export default function TaskForm({errors, register} : TaskFormProps) {
                 <label
                     className="font-normal text-2xl"
                     htmlFor="name"
-                >Task Name</label>
+                >Nombre de la tarea</label>
                 <input
                     id="name"
                     type="text"
-                    placeholder="Task Name"
+                    placeholder="Nombre"
                     className="w-full p-3  border-gray-300 border"
                     {...register("name", {
-                        required: "The task name is required"
+                        required: "El nombre de la tarea es obligatorio"
                     })}
                 />
                 {errors.name && (
@@ -33,13 +33,13 @@ export default function TaskForm({errors, register} : TaskFormProps) {
                 <label
                     className="font-normal text-2xl"
                     htmlFor="description"
-                >Task Description</label>
+                >Descripción de la tarea</label>
                 <textarea
                     id="description"
-                    placeholder="Task Description"
+                    placeholder="Descripción"
                     className="w-full p-3  border-gray-300 border"
                     {...register("description", {
-                        required: "The task description is required"
+                        required: "La descripción de la tarea es obligatoria"
                     })}
                 />
                 {errors.description && (

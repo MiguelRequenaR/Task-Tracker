@@ -34,14 +34,14 @@ export default function DashboardView() {
 
   if(data) return (
     <>
-      <h1 className="text-5xl font-black">My Projects</h1>
-      <p className="text-2xl font-light text-gray-500 mt-5">Manage your projects</p>
+      <h1 className="text-5xl text-primary font-black">Proyectos</h1>
+      <p className="text-2xl pb-4 font-light text-gray-500 mt-5">Administra tus proyectos</p>
       <nav className="my-5">
         <Link 
           className="bg-cyan-600 hover:bg-cyan-700 px-10 py-3 text-white text-xl font-bold cursor-pointer transition-colors"
           to="/projects/create"
         >
-          New Project
+          Crear proyecto
         </Link>
       </nav>
       
@@ -104,12 +104,12 @@ export default function DashboardView() {
         ))}
       </ul>
       ) : (
-        <p className="text-center text-xl py-20">No projects yet, {''}
+        <p className="text-center text-xl py-20">Aún no hay proyectos, {''}
         <Link 
           className="text-cyan-600 font-bold"
           to="/projects/create"
         >
-          Create a new project
+          Empieza por crear un nuevo proyecto
         </Link>
         </p>
       )}

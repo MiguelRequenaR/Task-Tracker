@@ -27,7 +27,7 @@ export default function ProjectDetails() {
     //Si hay data se muestra el formulario
     if(data) return (
         <>
-            <h1 className="text-5xl font-black">
+            <h1 className="text-5xl text-primary font-black">
                 {data.projectName}
             </h1>
             <p className="text-2xl font-light text-gray-500 mt-5">{data.description}</p>
@@ -35,10 +35,10 @@ export default function ProjectDetails() {
             <nav className="my-5 flex gap-3">
                 <button 
                     type="button" 
-                    className="bg-cyan-400 hover:bg-cyan-600 px-10 py-3 text-white text-xl font-bold cursor-pointer transition-colors"
+                    className="bg-cyan-600 hover:bg-cyan-700 px-10 py-3 text-white text-xl font-bold cursor-pointer transition-colors"
                     onClick={() => navigate(location.pathname + '?newTask=true')}
                 >
-                    Add task
+                    Agregar tarea
                 </button>
             </nav>
 

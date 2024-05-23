@@ -34,6 +34,7 @@ export default function EditTaskModal({data, taskId}: EditTaskModalProps) {
         },
         onSuccess: (data) => {
             queryClient.invalidateQueries({queryKey: ['editProject', projectId]});
+            queryClient.invalidateQueries({queryKey: ['task', taskId]});
             toast.success(data);
             reset();
             navigate(location.pathname, { replace: true });
@@ -80,11 +81,11 @@ export default function EditTaskModal({data, taskId}: EditTaskModalProps) {
                                     as="h3"
                                     className="font-black text-4xl  my-5"
                                 >
-                                    Edit Task
+                                    Editar tarea
                                 </DialogTitle>
 
-                                <p className="text-xl font-bold">Make the changes in the {''}
-                                    <span className="text-fuchsia-600">following form</span>
+                                <p className="text-xl font-bold">Realiza las modificaciones en el {''}
+                                    <span className="text-cyan-600">siguiente formulario</span>
                                 </p>
 
                                 <form
@@ -99,8 +100,8 @@ export default function EditTaskModal({data, taskId}: EditTaskModalProps) {
                     
                                     <input
                                         type="submit"
-                                        className=" bg-fuchsia-600 hover:bg-fuchsia-700 w-full p-3  text-white font-black  text-xl cursor-pointer"
-                                        value='Save Task'
+                                        className=" bg-cyan-600 hover:bg-cyan-700 w-full p-3  text-white font-black  text-xl cursor-pointer"
+                                        value='Guardar cambios'
                                     />
                                 </form>
                             </DialogPanel>
