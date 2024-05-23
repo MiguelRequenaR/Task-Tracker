@@ -4,6 +4,7 @@ import { getProjectById } from "@/api/ProjectApi";
 import AddTaskModal from "@/components/tasks/AddTaskModal";
 import TaskList from "@/components/tasks/TaskList";
 import EditTaskData from "@/components/tasks/EditTaskData";
+import TaskModalDetails from "@/components/tasks/TaskModalDetails";
 
 export default function ProjectDetails() {
 
@@ -13,7 +14,7 @@ export default function ProjectDetails() {
 
     //Cuando un funcion recibe parametros esta es la sintaxis a usar con useQuery
     const { data, isLoading, isError } = useQuery({
-        queryKey: ['project', projectId],
+        queryKey: ['editProject', projectId],
         //cuando se tiene una funcion que toma un parametro se usa callback
         queryFn: () => getProjectById(projectId),
         retry: false
@@ -49,6 +50,8 @@ export default function ProjectDetails() {
             <AddTaskModal />
             {/* Este realiza la consulta con usequery, y trae la info de la tarea a editar */}
             <EditTaskData />
+            
+            <TaskModalDetails />
         </>
     )
 }

@@ -5,13 +5,13 @@ import EditProjectForm from "@/components/projects/EditProjectForm";
 
 export default function EditProject() {
     const params = useParams();
-    const projetcId = params.projectId!;
+    const projectId = params.projectId!;
 
     //Cuando un funcion recibe parametros esta es la sintaxis a usar con useQuery
     const { data, isLoading, isError } = useQuery({
-        queryKey: ['editProject', projetcId],
+        queryKey: ['editProject', projectId],
         //cuando se tiene una funcion que toma un parametro se usa callback
-        queryFn: () => getProjectById(projetcId),
+        queryFn: () => getProjectById(projectId),
         retry: false
     })
 
@@ -20,5 +20,5 @@ export default function EditProject() {
     //Si hay un error se redirige a la pagina 404
     if(isError) return <Navigate to="/404" />;
     //Si hay data se muestra el formulario
-    if(data) return <EditProjectForm data={data} projectId={projetcId}/>
+    if(data) return <EditProjectForm data={data} projectId={projectId}/>
 }
