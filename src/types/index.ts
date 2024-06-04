@@ -13,6 +13,8 @@ type AuthUser = z.infer<typeof authSchema>
 export type UserLoginForm = Pick<AuthUser, 'email' | 'password'>
 export type UserRegisterForm = Pick<AuthUser, 'name' | 'email' | 'password' | 'passwordConfirmation'>
 export type RequestConfirmationCodeForm = Pick<AuthUser, 'email'>
+export type ForgotPasswordForm = Pick<AuthUser, 'email'>
+export type NewPasswordForm = Pick<AuthUser, 'password' | 'passwordConfirmation'>
 export type ConfirmToken = Pick<AuthUser, 'token'>
 
 //Tasks

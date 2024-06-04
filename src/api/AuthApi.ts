@@ -1,6 +1,6 @@
 import api from "@/lib/axios";
 import { isAxiosError } from "axios";
-import { ConfirmToken, RequestConfirmationCodeForm, UserLoginForm, UserRegisterForm } from "@/types/index";
+import { ConfirmToken, ForgotPasswordForm, NewPasswordForm, RequestConfirmationCodeForm, UserLoginForm, UserRegisterForm } from "@/types/index";
 
 //Crear una cuenta
 export async function registerAccount(formData: UserRegisterForm) {
@@ -42,6 +42,42 @@ export async function requestConfirmationCode(formData: RequestConfirmationCodeF
 export async function login(formData: UserLoginForm) {
     try{
         const url = '/auth/login';
+        const { data } = await api.post<string>(url, formData);
+        return data;
+    }catch(error){
+        if(isAxiosError(error) && error.response){
+            throw new Error(error.response.data.error);
+        }
+    }
+}
+//Cambiar contraseña
+export async function changePassword(formData: ForgotPasswordForm){
+    try{
+        const url = '/auth/forgot-password';
+        const { data } = await api.post<string>(url, formData);
+        return data;
+    }catch(error){
+        if(isAxiosError(error) && error.response){
+            throw new Error(error.response.data.error);
+        }
+    }
+}
+//Validar token
+export async function validateToken(formData: ConfirmToken) {
+    try{
+        const url = '/auth/validate-token';
+        const { data } = await api.post<string>(url, formData);
+        return data;
+    }catch(error){
+        if(isAxiosError(error) && error.response){
+            throw new Error(error.response.data.error);
+        }
+    }
+}
+//Actualizar contraseña
+export async function updatePassword({formData, token} : {formData: NewPasswordForm, token: ConfirmToken['token']}) {
+    try{
+        const url = `/auth/update-password/${token}`;
         const { data } = await api.post<string>(url, formData);
         return data;
     }catch(error){

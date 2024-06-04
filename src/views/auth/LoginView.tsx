@@ -88,7 +88,7 @@ export default function LoginView() {
                 <div className="flex flex-col gap-2">
                 <label
                     className="font-semibold text-xl"
-                >Password</label>
+                >Contraseña</label>
 
                 <input
                     type="password"

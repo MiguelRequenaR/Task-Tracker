@@ -7,7 +7,6 @@ import { registerAccount } from "@/api/AuthApi";
 import { toast } from "react-toastify";
 
 export default function RegisterView() {
-  
     const initialValues: UserRegisterForm = {
         name: '',
         email: '',
@@ -158,7 +157,11 @@ export default function RegisterView() {
                     className="bg-secondary hover:bg-green-600 w-full p-3  text-white font-black  text-xl cursor-pointer rounded-xl"
                 />
                  <div className="flex items-center justify-between">
-                    <p className="text-secondary font-bold">Restablecer contraseña</p>
+                    <Link
+                        to={'/auth/forgot-password'}
+                    >
+                        <p className="text-sm">Restablecer <span className="text-secondary text-sm font-bold">Contraseña</span></p>
+                    </Link>
                     <Link
                         to={'/auth/login'}
                     >

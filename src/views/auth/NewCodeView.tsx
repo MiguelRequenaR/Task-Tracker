@@ -53,7 +53,7 @@ export default function RegisterView() {
                             placeholder="Ingrese su email"
                             className="w-full p-3  border-gray-400 border-2 rounded-xl focus:outline-none focus:border-secondary"
                             {...register("email", {
-                                required: "El Email de registro es obligatorio",
+                                required: "El Email es obligatorio",
                                 pattern: {
                                     value: /\S+@\S+\.\S+/,
                                     message: "E-mail no válido",
