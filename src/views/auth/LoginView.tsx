@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import { UserLoginForm } from "@/types/index";
 import ErrorMessage from "@/components/ErrorMessage";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useMutation } from "@tanstack/react-query";
 import { login } from "@/api/AuthApi";
 import { toast } from "react-toastify";
@@ -14,13 +14,15 @@ export default function LoginView() {
     }
     const { register, handleSubmit, formState: { errors } } = useForm({ defaultValues: initialValues })
 
+    const navigate = useNavigate();
+
     const { mutate } = useMutation({
         mutationFn: login,
         onError: (error) => {
             toast.error(error.message)
         },
         onSuccess: () => {
-            toast.success('Iniciando sesión');
+            navigate('/');
         }
     })
 
@@ -37,7 +39,7 @@ export default function LoginView() {
             >
                 <div>
                     <h1 className="text-4xl font-bold text-primary">Inicia Sesión </h1>
-                    <div className="mt-10 flex items-centerd justify-around gap-7">
+                    {/* <div className="mt-10 flex items-centerd justify-around gap-7">
                         <div className="flex gap-5 items-center border border-primary w-1/2 py-2 px-2 rounded-xl group hover:border-secondary cursor-pointer">
                             <img 
                                 src="https://img.icons8.com/?size=48&id=17949&format=png" 
@@ -54,13 +56,13 @@ export default function LoginView() {
                             />
                             <p className="text-primary font-bold text-xl group-hover:text-secondary">Facebook</p>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
-                <div className="flex items-center justify-center">
+                {/* <div className="flex items-center justify-center">
                     <div className="flex-grow h-px bg-gray-300"></div>
                     <span className="mx-2 text-sm text-gray-500">Or</span>
                     <div className="flex-grow h-px bg-gray-300"></div>
-                </div>
+                </div> */}
 
                 <div className="flex flex-col gap-2">
                     <label

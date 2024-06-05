@@ -42,8 +42,8 @@ export default function RegisterView() {
                 noValidate
             >
                 <div>
-                    <h1 className="text-4xl font-bold text-primary text-right">Regístrate con</h1>	
-                    <div className="mt-10 flex items-centerd justify-around gap-7">
+                    <h1 className="text-4xl font-bold text-primary">Regístrate </h1>	
+                    {/* <div className="mt-10 flex items-centerd justify-around gap-7">
                         <div className="flex gap-5 items-center border border-primary w-1/2 py-2 px-2 rounded-xl group hover:border-secondary cursor-pointer">
                             <img 
                                 src="https://img.icons8.com/?size=48&id=17949&format=png" 
@@ -60,14 +60,14 @@ export default function RegisterView() {
                             />
                             <p className="text-primary font-bold text-xl group-hover:text-secondary">Facebook</p>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
                 {/* Separador */}
-                <div className="flex items-center justify-center">
+                {/* <div className="flex items-center justify-center">
                     <div className="flex-grow h-px bg-gray-300"></div>
                     <span className="mx-2 text-sm text-gray-500">Or</span>
                     <div className="flex-grow h-px bg-gray-300"></div>
-                </div>
+                </div> */}
                 <div className="flex flex-col gap-2">
                 <label
                     className="font-semibold text-xl"

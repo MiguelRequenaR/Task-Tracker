@@ -1,6 +1,6 @@
 import api from "@/lib/axios";
 import { isAxiosError } from "axios";
-import { ConfirmToken, ForgotPasswordForm, NewPasswordForm, RequestConfirmationCodeForm, UserLoginForm, UserRegisterForm } from "@/types/index";
+import { ConfirmToken, ForgotPasswordForm, NewPasswordForm, RequestConfirmationCodeForm, UserLoginForm, UserRegisterForm, userSchema } from "@/types/index";
 
 //Crear una cuenta
 export async function registerAccount(formData: UserRegisterForm) {
@@ -84,6 +84,20 @@ export async function updatePassword({formData, token} : {formData: NewPasswordF
         const url = `/auth/update-password/${token}`;
         const { data } = await api.post<string>(url, formData);
         return data;
+    }catch(error){
+        if(isAxiosError(error) && error.response){
+            throw new Error(error.response.data.error);
+        }
+    }
+}
+//Obtener el usuario que esta autenticado
+export async function getUser() {
+    try{
+        const { data } = await api('/auth/user');
+        const response = userSchema.safeParse(data);
+        if(response.success){
+            return response.data;
+        }
     }catch(error){
         if(isAxiosError(error) && error.response){
             throw new Error(error.response.data.error);
