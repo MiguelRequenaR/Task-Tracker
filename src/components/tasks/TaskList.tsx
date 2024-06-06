@@ -5,6 +5,7 @@ import { statusTranslations } from "@/locales/translations";
 
 type TaskListProps = {
     tasks: Task[],
+    canEdit: boolean,
 }
 
 type StatusGroups = {
@@ -30,7 +31,7 @@ const statusStyles : { [key: string] : string } = {
 
 
 
-export default function TaskList({tasks}: TaskListProps) {
+export default function TaskList({tasks, canEdit}: TaskListProps) {
 
     //Agrupar las tareas por el estado con reduce
     const groupedTasks = tasks.reduce((acc, task) => {
@@ -56,7 +57,7 @@ export default function TaskList({tasks}: TaskListProps) {
                             {tasks.length === 0 ? (
                                 <li className="text-gray-500 text-center font-semibold pt-3">No hay tareas</li>
                             ) : (
-                                tasks.map(task => <TaskCard key={task._id} task={task} />)
+                                tasks.map(task => <TaskCard key={task._id} task={task} canEdit={canEdit} />)
                             )}
                         </ul>
                     </div>
