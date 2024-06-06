@@ -63,3 +63,14 @@ export const dashboardProject = z.array(
 )
 export type Project = z.infer<typeof projectSchema>
 export type ProjectFormData = Pick<Project, 'clientName' | 'projectName' | 'description'>
+
+//Team
+const teamSchema = userSchema.pick({
+    name: true,
+    email: true,
+    _id: true,
+})
+
+export const teamMemberSchema = z.array(teamSchema);
+export type Team = z.infer<typeof teamSchema>;
+export type TeamMemberForm = Pick<Team, 'email'>
