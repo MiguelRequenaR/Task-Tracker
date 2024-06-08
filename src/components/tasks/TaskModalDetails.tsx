@@ -1,4 +1,4 @@
-import { Fragment, act } from 'react';
+import { Fragment } from 'react';
 import { Dialog, Transition, TransitionChild, DialogPanel, DialogTitle } from '@headlessui/react';
 import { Navigate, useLocation, useNavigate, useParams } from 'react-router-dom';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
@@ -7,6 +7,7 @@ import { toast } from 'react-toastify';
 import { formDate } from '@/utils/utils';
 import { statusTranslations } from '@/locales/translations';
 import { TaskStatus } from '@/types';
+import Notes from '../notes/Notes';
 
 
 export default function TaskModalDetails() {
@@ -100,16 +101,21 @@ export default function TaskModalDetails() {
                                     </DialogTitle>
                                     <p className='text-lg text-slate-500 mb-2'>Descripción: {data.description}</p>
 
-                                    <p className='text-2xl text-primary mb-2'>Historial de cambios:</p>
+                                    {data.completedBy.length ? (
+                                        <>
+                                            <p className='text-2xl text-primary mb-2'>Historial de cambios:</p>
 
-                                    <ul className=' list-decimal list-inside'>
-                                        {data.completedBy.map ((activityLog) => (
-                                            <li key={activityLog._id}>
-                                                <span className='font-bold text-secondary'>
-                                                    {statusTranslations[activityLog.status]} por:</span>{' '} {activityLog.user.name}
-                                            </li>
-                                        ))}
-                                    </ul>
+                                            <ul className=' list-decimal list-inside'>
+                                                {data.completedBy.map ((activityLog) => (
+                                                    <li key={activityLog._id}>
+                                                        <span className='font-bold text-secondary'>
+                                                            {statusTranslations[activityLog.status]} por:</span>{' '} {activityLog.user.name}
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        </>
+                                    ): null}
+
 
 
                                     <div className='my-5 space-y-3'>
@@ -125,6 +131,11 @@ export default function TaskModalDetails() {
                                             ))}
                                         </select>
                                     </div>
+
+                                    <Notes 
+                                        notes={data.note}
+                                    />
+                                    
                                 </DialogPanel>
                             </TransitionChild>
                         </div>
