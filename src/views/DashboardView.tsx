@@ -1,37 +1,24 @@
 import { Fragment } from 'react'
 import { Menu, Transition, MenuButton, MenuItems, MenuItem } from '@headlessui/react'
 import { EllipsisVerticalIcon } from '@heroicons/react/20/solid'
-import { Link } from "react-router-dom"
-import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query"
-import { deleteProject, getProjects } from "@/api/ProjectApi"
-import { toast } from 'react-toastify'
+import { Link, useLocation, useNavigate } from "react-router-dom"
+import { useQuery } from "@tanstack/react-query"
+import { getProjects } from "@/api/ProjectApi"
 import { useAuth } from '@/hooks/useAuth'
 import { isManager } from '@/utils/politic'
+import DeleteProject from './projects/DeleteProject'
 
 
 export default function DashboardView() {
 
+  const location = useLocation();
+  const navigate = useNavigate();
   const { data: user, isLoading: authLoading } = useAuth();
 
   //useQuery obtiene los datos de la API
   const { data, isLoading } = useQuery({
     queryKey: ['projects'],
     queryFn: getProjects 
-  })
-
-  //useQueryClient invalida la cache
-  const queryClient = useQueryClient();
-
-  //useMutation modifica los datos
-  const { mutate } = useMutation({
-    mutationFn: deleteProject,
-    onError: (error) => {
-      toast.error(error.message)
-    },
-    onSuccess: (data) => {
-      toast.success(data),
-      queryClient.invalidateQueries({ queryKey: ['projects'] })
-    }
   })
 
 
@@ -107,7 +94,7 @@ export default function DashboardView() {
                                           <button 
                                               type='button' 
                                               className='block px-3 py-1 text-sm leading-6 text-red-500'
-                                              onClick={() => mutate( project._id ) }
+                                              onClick={() => navigate (location.pathname + `?deleteProject=${project._id}`)}
                                           >
                                               Eliminar Proyecto
                                           </button>
@@ -131,6 +118,9 @@ export default function DashboardView() {
         </Link>
         </p>
       )}
+
+      <DeleteProject />
+
     </>
   )
 }
