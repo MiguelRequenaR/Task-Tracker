@@ -34,26 +34,28 @@ export default function ChangePasswordView() {
         <>
         <div className="mx-auto max-w-3xl">
 
-            <h1 className="text-5xl font-black ">Cambiar Password</h1>
-            <p className="text-2xl font-light text-gray-500 mt-5">Utiliza este formulario para cambiar tu password</p>
+            <h1 className="text-3xl font-semibold ">Cambiar contraseña</h1>
+            <p className="text-xl font-light text-gray-500 mt-5">Utiliza este formulario para cambiar {""}
+                <span className="text-secondary font-normal">tu contraseña.</span>
+            </p>
 
             <form
             onSubmit={handleSubmit(handleChangePassword)}
-            className=" mt-14 space-y-5 bg-white shadow-lg p-10 rounded-lg"
+            className=" mt-14 space-y-5 bg-white shadow-2xl p-10 rounded-xl"
             noValidate
             >
             <div className="mb-5 space-y-3">
                 <label
-                className="text-sm uppercase font-bold"
+                className="text-lg font-light"
                 htmlFor="current_password"
-                >Password Actual</label>
+                >Contraseña actual</label>
                 <input
                 id="current_password"
                 type="password"
-                placeholder="Password Actual"
-                className="w-full p-3  border border-gray-200"
+                placeholder="Contraseña actual"
+                className="w-full p-3  border-gray-400 border-2 rounded-xl focus:outline-none focus:border-secondary"
                 {...register("currentPassword", {
-                    required: "El password actual es obligatorio",
+                    required: "La Contraseña actual es obligatorio",
                 })}
                 />
                 {errors.currentPassword && (
@@ -63,16 +65,16 @@ export default function ChangePasswordView() {
 
             <div className="mb-5 space-y-3">
                 <label
-                className="text-sm uppercase font-bold"
+                className="text-lg font-light"
                 htmlFor="password"
-                >Nuevo Password</label>
+                >Contraseña nueva</label>
                 <input
                 id="password"
                 type="password"
-                placeholder="Nuevo Password"
-                className="w-full p-3  border border-gray-200"
+                placeholder="Contraseña nueva"
+                className="w-full p-3  border-gray-400 border-2 rounded-xl focus:outline-none focus:border-secondary"
                 {...register("password", {
-                    required: "El Nuevo Password es obligatorio",
+                    required: "La Contraseña nueva es obligatorio",
                     minLength: {
                     value: 8,
                     message: 'El Password debe ser mínimo de 8 caracteres'
@@ -86,14 +88,14 @@ export default function ChangePasswordView() {
             <div className="mb-5 space-y-3">
                 <label
                 htmlFor="password_confirmation"
-                className="text-sm uppercase font-bold"
-                >Repetir Password</label>
+                className="text-lg font-light"
+                >Repita la contraseña</label>
 
                 <input
                 id="password_confirmation"
                 type="password"
-                placeholder="Repetir Password"
-                className="w-full p-3  border border-gray-200"
+                placeholder="Repita la contraseña"
+                className="w-full p-3  border-gray-400 border-2 rounded-xl focus:outline-none focus:border-secondary"
                 {...register("passwordConfirmation", {
                     required: "Este campo es obligatorio",
                     validate: value => value === password || 'Los Passwords no son iguales'
@@ -107,7 +109,7 @@ export default function ChangePasswordView() {
             <input
                 type="submit"
                 value='Cambiar Password'
-                className="bg-fuchsia-600 w-full p-3 text-white uppercase font-bold hover:bg-fuchsia-700 cursor-pointer transition-colors"
+                className="bg-secondary hover:bg-green-600 w-full p-3  text-white font-light text-xl cursor-pointer rounded-xl"
             />
             </form>
         </div>

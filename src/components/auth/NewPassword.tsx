@@ -35,16 +35,16 @@ export default function NewPassword({token, setToken, setIsValid}: NewPasswordPr
     return (
         <>
             <div className='bg-tertiary p-10 rounded-xl'>  
-                <h1 className="text-4xl font-bold text-primary">Restablece tu contraseña</h1>
-                <p className="text-xl font-light text-primary mt-5">
+                <h1 className="text-3xl font-normal text-primary">Restablece tu contraseña</h1>
+                <p className="text-lg font-light text-gray-500 mt-5">
                     Ingresa el código que recibiste {''}
-                    <span className=" text-secondary font-bold"> por e-mail.</span>
+                    <span className=" text-secondary font-normal"> por e-mail.</span>
                 </p>   
                 <form
                     className="space-y-8 p-10 bg-primary mt-10 rounded-xl"
                 >
                     <label
-                        className="font-normal text-2xl text-center block text-secondary"
+                        className="font-normal text-xl text-center block text-secondary"
                     >Código de 6 dígitos</label>
                     <div className="flex justify-center gap-5">
                         <PinInput value={token} onChange={handleChange} onComplete={handleComplete}>
@@ -72,7 +72,7 @@ export default function NewPassword({token, setToken, setIsValid}: NewPasswordPr
                 <nav className="mt-10 flex flex-col space-y-4">
                     <Link
                         to='/auth/forgot-password'
-                        className="text-center text-secondary font-semibold text-lg"
+                        className="text-center text-secondary rounded-xl hover:bg-green-200 font-semibold text-lg"
                     >
                         Solicitar un nuevo Código
                     </Link>

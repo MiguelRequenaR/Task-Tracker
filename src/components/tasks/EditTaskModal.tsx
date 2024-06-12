@@ -79,13 +79,13 @@ export default function EditTaskModal({data, taskId}: EditTaskModalProps) {
                             <DialogPanel className="w-full max-w-4xl transform overflow-hidden rounded-2xl bg-white text-left align-middle shadow-xl transition-all p-16">
                                 <DialogTitle
                                     as="h3"
-                                    className="font-black text-4xl  my-5"
+                                    className="font-semibold text-4xl  my-5"
                                 >
                                     Editar tarea
                                 </DialogTitle>
 
-                                <p className="text-xl font-bold">Realiza las modificaciones en el {''}
-                                    <span className="text-cyan-600">siguiente formulario</span>
+                                <p className="text-xl font-light text-gray-500">Realiza las modificaciones en el {''}
+                                    <span className="text-secondary font-normal">siguiente formulario.</span>
                                 </p>
 
                                 <form
@@ -100,7 +100,7 @@ export default function EditTaskModal({data, taskId}: EditTaskModalProps) {
                     
                                     <input
                                         type="submit"
-                                        className=" bg-cyan-600 hover:bg-cyan-700 w-full p-3  text-white font-black  text-xl cursor-pointer"
+                                        className=" bg-secondary hover:bg-green-600 w-full p-3  text-white font-light text-xl cursor-pointer rounded-xl"
                                         value='Guardar cambios'
                                     />
                                 </form>

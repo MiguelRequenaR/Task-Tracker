@@ -7,9 +7,12 @@ export default {
   theme: {
     extend: {
       colors: {
-        'primary': '#2e2f33',
+        'primary': '#140c0c',
         'secondary': '#1db954',
         'tertiary': '#ffffff',
+      },
+      fontFamily: {
+        'poppins': ['Poppins', 'sans-serif'],
       },
     },
   },
@@ -17,4 +20,3 @@ export default {
     require('@tailwindcss/forms'),
   ],
 }
-

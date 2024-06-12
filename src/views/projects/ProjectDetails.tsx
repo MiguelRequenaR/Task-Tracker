@@ -1,6 +1,6 @@
 import { Navigate, useNavigate, useParams, Link } from "react-router-dom"
 import { useQuery } from "@tanstack/react-query";
-import { getProjectById } from "@/api/ProjectApi";
+import { getFullProject } from "@/api/ProjectApi";
 import AddTaskModal from "@/components/tasks/AddTaskModal";
 import TaskList from "@/components/tasks/TaskList";
 import EditTaskData from "@/components/tasks/EditTaskData";
@@ -8,6 +8,7 @@ import TaskModalDetails from "@/components/tasks/TaskModalDetails";
 import { useAuth } from "@/hooks/useAuth";
 import { isManager } from "@/utils/politic";
 import { useMemo } from "react";
+import { PlusCircleIcon } from "@heroicons/react/20/solid";
 
 export default function ProjectDetails() {
 
@@ -21,7 +22,7 @@ export default function ProjectDetails() {
     const { data, isLoading, isError } = useQuery({
         queryKey: ['editProject', projectId],
         //cuando se tiene una funcion que toma un parametro se usa callback
-        queryFn: () => getProjectById(projectId),
+        queryFn: () => getFullProject(projectId),
         retry: false
     })
 
@@ -34,25 +35,27 @@ export default function ProjectDetails() {
     //Si hay data se muestra el formulario
     if(data && user) return (
         <>
-            <h1 className="text-5xl text-primary font-black">
+            <h1 className="text-4xl text-primary font-semibold">
                 {data.projectName}
             </h1>
-            <p className="text-2xl font-light text-gray-500 mt-5">{data.description}</p>
+            <p className="text-xl font-light text-gray-500 mt-5">{data.description}</p>
 
             {isManager(data.manager, user._id) && (
-                <nav className="my-5 flex gap-3">
+                <nav className="my-5 lg:flex gap-3">
                     <button 
                         type="button" 
-                        className="bg-cyan-600 hover:bg-cyan-700 px-10 py-3 text-white text-xl font-bold cursor-pointer transition-colors"
+                        className="bg-secondary hover:bg-green-700 px-5 py-3 text-tertiary text-xl font-light cursor-pointer transition-colors rounded-xl flex items-center gap-3 mb-2"
                         onClick={() => navigate(location.pathname + '?newTask=true')}
                     >
+                        <PlusCircleIcon className="h-5 w-5" />
                         Agregar tarea
                     </button>
                     <Link
                         to={'team'}
-                        className="bg-secondary hover:bg-green-700 px-10 py-3 text-tertiary text-xl font-bold cursor-pointer transition-colors rounded-xl"
+                        className="bg-secondary hover:bg-green-700 px-5 py-3 text-tertiary text-xl font-light cursor-pointer transition-colors rounded-xl flex items-center gap-3 mb-2"
                     >
-                        Colaboradores
+                        <PlusCircleIcon className="h-5 w-5" />
+                        Agregar miembro
                     </Link>
                 </nav>
             )}

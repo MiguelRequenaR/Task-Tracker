@@ -7,6 +7,7 @@ import { getProjects } from "@/api/ProjectApi"
 import { useAuth } from '@/hooks/useAuth'
 import { isManager } from '@/utils/politic'
 import DeleteProject from './projects/DeleteProject'
+import { PlusIcon } from '@heroicons/react/16/solid'
 
 
 export default function DashboardView() {
@@ -26,19 +27,23 @@ export default function DashboardView() {
 
   if(data && user) return (
     <>
-      <h1 className="text-5xl text-primary font-black">Proyectos</h1>
-      <p className="text-2xl pb-4 font-light text-gray-500 mt-5">Administra tus proyectos</p>
-      <nav className="my-5">
-        <Link 
-          className="bg-cyan-600 hover:bg-cyan-700 px-10 py-3 text-white text-xl font-bold cursor-pointer transition-colors"
-          to="/projects/create"
-        >
-          Crear proyecto
-        </Link>
-      </nav>
+      <div className='lg:flex items-center justify-between'>
+        <div className='p-3'>
+          <h1 className="text-5xl text-primary font-semibold">Proyectos</h1>
+          <p className="text-2xl font-light mt-3 text-gray-500">Administra tus proyectos</p>
+        </div>
+        <nav className="my-5 flex bg-secondary hover:bg-green-600 px-5 py-3 text-white text-xl font-light cursor-pointer transition-colors items-center gap-3 rounded-xl">
+          <PlusIcon className='h-5 w-5' />
+          <Link 
+            to="/projects/create"
+          >
+            Nuevo proyecto
+          </Link>
+        </nav>
+      </div>
       
       {data.length ? (
-      <ul role="list" className="divide-y divide-gray-100 border border-gray-100 mt-10 bg-white shadow-lg">
+      <ul role="list" className="divide-y divide-gray-100 border border-gray-100 mt-10 rounded-xl shadow-2xl">
         {data.map((project) => (
           <li key={project._id} className="flex justify-between gap-x-6 px-5 py-10">
               <div className="flex min-w-0 gap-x-4">
@@ -109,13 +114,13 @@ export default function DashboardView() {
         ))}
       </ul>
       ) : (
-        <p className="text-center text-xl py-20">Aún no hay proyectos, {''}
-        <Link 
-          className="text-cyan-600 font-bold"
-          to="/projects/create"
-        >
-          Empieza por crear un nuevo proyecto
-        </Link>
+        <p className="text-center font-light text-xl py-20">Aún no hay proyectos, {''}
+          <Link 
+            className="text-secondary"
+            to="/projects/create"
+          >
+            empieza por crear un nuevo proyecto.
+          </Link>
         </p>
       )}
 

@@ -1,4 +1,4 @@
-import { Task, TaskStatus } from "@/types"
+import { TaskStatus, TaskProject } from "@/types"
 import TaskCard from "./TaskCard";
 import { statusTranslations } from "@/locales/translations";
 import DropTask from "./DropTask";
@@ -17,12 +17,12 @@ import { useParams } from "react-router-dom";
 
 
 type TaskListProps = {
-    tasks: Task[],
+    tasks: TaskProject[],
     canEdit: boolean,
 }
 
 type StatusGroups = {
-    [key: string]: Task[],
+    [key: string]: TaskProject[],
 }
 
 const initialStatusGroups : StatusGroups = {
@@ -35,11 +35,11 @@ const initialStatusGroups : StatusGroups = {
 
 
 const statusStyles : { [key: string] : string } = {
-    pending: 'border-t-cyan-700',
-    onHold: 'border-t-red-600',
-    inProgress: 'border-t-indigo-600',
-    underReview: 'border-t-amber-600',
-    completed: 'border-t-green-600',
+    pending: 'bg-cyan-200',
+    onHold: 'bg-red-200',
+    inProgress: 'bg-indigo-200',
+    underReview: 'bg-amber-200',
+    completed: 'bg-green-200',
 }
 
 
@@ -96,7 +96,7 @@ export default function TaskList({tasks, canEdit}: TaskListProps) {
 
     return (
         <>
-            <h2 className="text-5xl font-black text-primary my-10">Tareas Disponibles</h2>
+            <h2 className="text-3xl text-primary font-light my-10">Tareas Disponibles</h2>
 
             <div className='flex gap-5 overflow-x-scroll 2xl:overflow-auto pb-32'>
                 <DndContext
@@ -106,7 +106,7 @@ export default function TaskList({tasks, canEdit}: TaskListProps) {
                     {Object.entries(groupedTasks).map(([status, tasks]) => (
                         <div key={status} className='min-w-[300px] 2xl:min-w-0 2xl:w-1/5'>
                             <h3 
-                                className={`capitalize text-xl font-semibold text-gray-700 text-center border border-slate-300 bg-white p-3 border-t-8 ${statusStyles[status]}`}
+                                className={`capitalize text-xl font-light text-gray-700 text-center bg-white p-3  rounded-xl ${statusStyles[status]}`}
                             >
                                 {statusTranslations[status]}
                             </h3>
@@ -117,7 +117,7 @@ export default function TaskList({tasks, canEdit}: TaskListProps) {
 
                             <ul className='mt-5 space-y-5'>
                                 {tasks.length === 0 ? (
-                                    <li className="text-gray-500 text-center font-semibold pt-3">No hay tareas</li>
+                                    <li className="text-gray-500 text-center font-normal pt-3">No hay tareas</li>
                                 ) : (
                                     tasks.map(task => <TaskCard key={task._id} task={task} canEdit={canEdit} />)
                                 )}

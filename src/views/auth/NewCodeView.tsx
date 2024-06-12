@@ -31,10 +31,10 @@ export default function RegisterView() {
     return (
         <>
             <div className="bg-tertiary p-10 rounded-xl">
-                <h1 className="text-4xl font-bold text-primary">Solicitar Código de Confirmación</h1>
-                <p className="text-xl font-light text-primary mt-5">
+                <h1 className="text-3xl font-normal text-primary">Solicitar Código de Confirmación</h1>
+                <p className="text-lg font-light text-gray-500 mt-5">
                     Coloca tu e-mail para recibir {''}
-                    <span className=" text-secondary font-bold"> un nuevo código.</span>
+                    <span className=" text-secondary font-normal"> un nuevo código.</span>
                 </p>
 
                 <form

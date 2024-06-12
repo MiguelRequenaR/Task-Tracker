@@ -10,18 +10,18 @@ type TaskFormProps = {
 export default function TaskForm({errors, register} : TaskFormProps) {
     return (
         <>
-            <div className="flex flex-col gap-5">
+            <div className="flex flex-col gap-2">
                 <label
-                    className="font-normal text-2xl"
+                    className="font-light text-lg"
                     htmlFor="name"
                 >Nombre de la tarea</label>
                 <input
                     id="name"
                     type="text"
                     placeholder="Nombre"
-                    className="w-full p-3  border-gray-300 border"
+                    className="ww-full p-3  border-gray-400 border-2 rounded-xl focus:outline-none focus:border-secondary"
                     {...register("name", {
-                        required: "El nombre de la tarea es obligatorio"
+                        required: "El nombre es obligatorio"
                     })}
                 />
                 {errors.name && (
@@ -29,17 +29,17 @@ export default function TaskForm({errors, register} : TaskFormProps) {
                 )}
             </div>
 
-            <div className="flex flex-col gap-5">
+            <div className="flex flex-col gap-2">
                 <label
-                    className="font-normal text-2xl"
+                    className="font-light text-lg"
                     htmlFor="description"
                 >Descripción de la tarea</label>
                 <textarea
                     id="description"
                     placeholder="Descripción"
-                    className="w-full p-3  border-gray-300 border"
+                    className="w-full p-3  border-gray-400 border-2 rounded-xl focus:outline-none focus:border-secondary"
                     {...register("description", {
-                        required: "La descripción de la tarea es obligatoria"
+                        required: "La descripción es obligatoria"
                     })}
                 />
                 {errors.description && (

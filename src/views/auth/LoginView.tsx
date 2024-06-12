@@ -38,7 +38,7 @@ export default function LoginView() {
                 noValidate
             >
                 <div>
-                    <h1 className="text-4xl font-bold text-primary">Inicia Sesión </h1>
+                    <h1 className="text-3xl font-normal text-primary">Inicia Sesión </h1>
                     {/* <div className="mt-10 flex items-centerd justify-around gap-7">
                         <div className="flex gap-5 items-center border border-primary w-1/2 py-2 px-2 rounded-xl group hover:border-secondary cursor-pointer">
                             <img 
@@ -66,14 +66,14 @@ export default function LoginView() {
 
                 <div className="flex flex-col gap-2">
                     <label
-                        className="font-semibold text-xl"
+                        className="font-light text-lg"
                     >Email:</label>
 
                 <input
                     id="email"
                     type="email"
                     placeholder="Ingrese su email"
-                    className="w-full p-3  border-gray-400 border-2 rounded-xl focus:outline-none focus:border-secondary"
+                    className="w-full p-3  border-gray-400 border-2 rounded-xl"
                     {...register("email", {
                         required: "El Email es obligatorio",
                         pattern: {
@@ -89,13 +89,13 @@ export default function LoginView() {
 
                 <div className="flex flex-col gap-2">
                 <label
-                    className="font-semibold text-xl"
-                >Contraseña</label>
+                    className="font-light text-lg"
+                >Contraseña:</label>
 
                 <input
                     type="password"
                     placeholder="Ingrese su contraseña"
-                    className="w-full p-3  border-gray-400 border-2 rounded-xl focus:outline-none focus:border-secondary"
+                    className="w-full p-3  border-gray-400 border-2 rounded-xl "
                     {...register("password", {
                         required: "El Password es obligatorio",
                     })}
@@ -108,19 +108,19 @@ export default function LoginView() {
                 <input
                     type="submit"
                     value='Iniciar Sesión'
-                    className="bg-secondary hover:bg-green-600 w-full p-3  text-white font-black text-xl cursor-pointer rounded-xl"
+                    className="bg-secondary hover:bg-green-600 w-full p-3  text-white font-light text-xl cursor-pointer rounded-xl"
                 />
                 <div className="flex items-center justify-between">
                     <Link
                         to='/auth/forgot-password'
-                        className="text-center text-primary font-normal text-sm"
+                        className="text-center text-primary font-light text-sm"
                     >
-                        Restablecer <span className="text-secondary text-sm font-bold">Contraseña</span>
+                        Restablecer <span className="text-secondary text-sm font-light">Contraseña</span>
                     </Link>
                     <Link
                         to={'/auth/register'}
                     >
-                        <p className="text-sm">¿No tienes una cuenta? <span className="text-secondary text-sm font-bold">Regístrate</span></p>
+                        <p className="text-sm font-light">¿No tienes una cuenta? <span className="text-secondary text-sm font-light">Regístrate</span></p>
                     </Link>
                 </div>
             </form>

@@ -29,24 +29,26 @@ export default function ProfileForm({ data } : ProfileFormProps) {
     return (
         <>
             <div className="mx-auto max-w-3xl g">
-                <h1 className="text-5xl font-black ">Mi Perfil</h1>
-                <p className="text-2xl font-light text-gray-500 mt-5">Aquí puedes actualizar tu información</p>
+                <h1 className="text-4xl font-semibold ">Mi Perfil</h1>
+                <p className="text-xl font-light text-gray-500 mt-5">Aquí puedes actualizar {""}
+                    <span className="text-secondary font-normal">tu información.</span>
+                </p>
 
                 <form
                     onSubmit={handleSubmit(handleEditProfile)}
-                    className=" mt-14 space-y-5  bg-white shadow-lg p-10 rounded-l"
+                    className=" mt-14 space-y-5  bg-white shadow-2xl p-10 rounded-xl"
                     noValidate
                 >
                     <div className="mb-5 space-y-3">
                         <label
-                            className="text-sm uppercase font-bold"
+                            className="text-lg font-light"
                             htmlFor="name"
                         >Nombre</label>
                         <input
                             id="name"
                             type="text"
                             placeholder="Tu Nombre"
-                            className="w-full p-3  border border-gray-200"
+                            className="w-full p-3  border-2 rounded-xl focus:outline-none focus:border-secondary"
                             {...register("name", {
                                 required: "Nombre de usuario es obligatoro",
                             })}
@@ -58,14 +60,14 @@ export default function ProfileForm({ data } : ProfileFormProps) {
 
                     <div className="mb-5 space-y-3">
                         <label
-                            className="text-sm uppercase font-bold"
+                            className="text-lg font-light"
                             htmlFor="password"
                         >E-mail</label>
                         <input
                             id="text"
                             type="email"
                             placeholder="Tu Email"
-                            className="w-full p-3  border border-gray-200"
+                            className="w-full p-3 border-2 rounded-xl focus:outline-none focus:border-secondary"
                             {...register("email", {
                                 required: "EL e-mail es obligatorio",
                                 pattern: {
@@ -81,7 +83,7 @@ export default function ProfileForm({ data } : ProfileFormProps) {
                     <input
                         type="submit"
                         value='Guardar Cambios'
-                        className="bg-fuchsia-600 w-full p-3 text-white uppercase font-bold hover:bg-fuchsia-700 cursor-pointer transition-colors"
+                        className="bg-secondary hover:bg-green-600 w-full p-3  text-white font-light text-xl cursor-pointer rounded-xl"
                     />
                 </form>
             </div>

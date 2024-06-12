@@ -92,18 +92,23 @@ export default function TaskModalDetails() {
                                 leaveTo="opacity-0 scale-95"
                             >
                                 <DialogPanel className="w-full max-w-4xl transform overflow-hidden rounded-2xl bg-white text-left align-middle shadow-xl transition-all p-16">
-                                    <p className='text-sm text-slate-400'>Agregada el: {formDate(data.createdAt)}</p>
-                                    <p className='text-sm text-slate-400'>Última actualización: {formDate(data.updatedAt)}</p>
+                                    <p className='text-sm text-primary'>Agregada el: {""}
+                                        <span className='text-secondary font-normal'>{formDate(data.createdAt)}</span>
+                                    </p>
+                                    <p className='text-sm text-primary'>Última actualización: {""}
+                                        <span className='text-secondary font-normal'>{formDate(data.updatedAt)}</span>
+                                    </p>
+                                    
                                     <DialogTitle
                                         as="h3"
-                                        className="font-black text-4xl text-slate-600 my-5"
+                                        className="font-semibold text-4xl text-slate-600 my-5"
                                     >{data.name}
                                     </DialogTitle>
-                                    <p className='text-lg text-slate-500 mb-2'>Descripción: {data.description}</p>
+                                    <p className='text-md font-light text-primary mb-2'>Descripción: {data.description}.</p>
 
                                     {data.completedBy.length ? (
                                         <>
-                                            <p className='text-2xl text-primary mb-2'>Historial de cambios:</p>
+                                            <p className='text-xl text-primary mb-2'>Historial de cambios:</p>
 
                                             <ul className=' list-decimal list-inside'>
                                                 {data.completedBy.map ((activityLog) => (
@@ -119,9 +124,9 @@ export default function TaskModalDetails() {
 
 
                                     <div className='my-5 space-y-3'>
-                                        <label className='font-bold'>Estado Actual:</label>
+                                        <label className='font-lith text-lg'>Estado Actual:</label>
                                         <select 
-                                            className='w-full p-3 bg-white border border-gray-500 rounded-lg'
+                                            className='w-full p-3 bg-white border border-gray-500 rounded-lg '
                                             //Valor por defecto es el estado actual
                                             defaultValue={data.status}
                                             onChange={handleChangeStatus}

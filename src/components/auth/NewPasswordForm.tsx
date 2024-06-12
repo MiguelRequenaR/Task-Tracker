@@ -44,10 +44,10 @@ export default function NewPasswordForm({token} : NewPasswordFormProps) {
     return (
         <>
             <div className="bg-tertiary p-10 rounded-xl">
-                <h1 className="text-4xl font-bold text-primary">Cambiar Contraseña</h1>
-                <p className="text-xl font-light text-primary mt-5">
+                <h1 className="text-3xl font-normal text-primary">Cambiar Contraseña</h1>
+                <p className="text-lg font-light text-gray-500 mt-5">
                     Ingrese se nueva {''}
-                    <span className=" text-secondary font-bold"> contraseña.</span>
+                    <span className=" text-secondary font-normal"> contraseña.</span>
                 </p>
 
                 <form
@@ -58,7 +58,7 @@ export default function NewPasswordForm({token} : NewPasswordFormProps) {
 
                     <div className="flex flex-col gap-2">
                         <label
-                            className="font-semibold text-xl text-secondary"
+                            className="font-semibold text-lg text-secondary"
                         >Contraseña</label>
 
                         <input
@@ -80,7 +80,7 @@ export default function NewPasswordForm({token} : NewPasswordFormProps) {
 
                     <div className="flex flex-col gap-2">
                         <label
-                            className="font-semibold text-xl text-secondary"
+                            className="font-semibold text-lg text-secondary"
                         >Repetir Contraseña</label>
 
                         <input
@@ -102,7 +102,7 @@ export default function NewPasswordForm({token} : NewPasswordFormProps) {
                     <input
                         type="submit"
                         value='Cambiar contraseña'
-                        className="bg-secondary hover:bg-green-600 w-full p-3  text-white font-black text-xl cursor-pointer rounded-xl"
+                        className="bg-secondary hover:bg-green-600 w-full p-3  text-white font-light text-xl cursor-pointer rounded-xl"
                     />
                 </form>
             </div>

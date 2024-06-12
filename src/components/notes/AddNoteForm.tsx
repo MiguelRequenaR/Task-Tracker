@@ -46,7 +46,7 @@ export default function AddNoteForm() {
             <div className="flex flex-col gap-3">
                 <label 
                     htmlFor="content"
-                    className="font-semibold"
+                    className="font-light text-lg"
                 >
                     Crear Nota
                 </label>
@@ -54,7 +54,7 @@ export default function AddNoteForm() {
                     type="text" 
                     id="content" 
                     placeholder="Nota"
-                    className="w-full p-3 border border-secondary"
+                    className="w-full p-3  border-gray-400 border-2 rounded-xl focus:outline-none focus:border-secondary"
                     {...register("content", {
                         required: "El contenido de la nota es obligatorio"
                     })}
@@ -63,7 +63,7 @@ export default function AddNoteForm() {
                     <ErrorMessage>{errors.content.message}</ErrorMessage>
                 )}
             </div>
-            <input type="submit" value="Crear Nota" className="bg-secondary hover:bg-green-600 w-full p-2 text-white font-bold uppercase cursor-pointer"/>
+            <input type="submit" value="Crear Nota" className="bg-secondary hover:bg-green-600 w-full p-3  text-white font-light text-xl cursor-pointer rounded-xl"/>
         </form>
     )
 }

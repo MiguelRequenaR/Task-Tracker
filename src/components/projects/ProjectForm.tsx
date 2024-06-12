@@ -11,16 +11,15 @@ export default function ProjectForm({ errors, register }: ProjectFormProps) {
     return (
         <>
             <div className="mb-5 space-y-3">
-                <label htmlFor="projectName" className="text-sm uppercase font-bold">
-                    Project Name
+                <label htmlFor="projectName" className="text-lg font-light">
+                    Nombre
                 </label>
                 <input
                     id="projectName"
-                    className="w-full p-3  border border-gray-200"
-                    type="text"
-                    placeholder="Project Name"
+                    className="w-full p-3  border-gray-400 border-2 rounded-xl focus:outline-none focus:border-secondary"
+                    placeholder="Nombre"
                     {...register("projectName", {
-                        required: "El Titulo del Proyecto es obligatorio",
+                        required: "El Nombre del Proyecto es obligatorio",
                     })}
                 />
 
@@ -30,14 +29,13 @@ export default function ProjectForm({ errors, register }: ProjectFormProps) {
             </div>
 
             <div className="mb-5 space-y-3">
-                <label htmlFor="clientName" className="text-sm uppercase font-bold">
-                    Client Name
+                <label htmlFor="clientName" className="text-lg  font-light">
+                    Nombre del cliente
                 </label>
                 <input
                     id="clientName"
-                    className="w-full p-3  border border-gray-200"
-                    type="text"
-                    placeholder="Client Name"
+                    className="w-full p-3  border-gray-400 border-2 rounded-xl focus:outline-none focus:border-secondary"
+                    placeholder="Cliente"
                     {...register("clientName", {
                         required: "El Nombre del Cliente es obligatorio",
                     })}
@@ -49,13 +47,13 @@ export default function ProjectForm({ errors, register }: ProjectFormProps) {
             </div>
 
             <div className="mb-5 space-y-3">
-                <label htmlFor="description" className="text-sm uppercase font-bold">
-                    Description
+                <label htmlFor="description" className="text-lg  font-light">
+                    Descripción
                 </label>
                 <textarea
                     id="description"
-                    className="w-full p-3  border border-gray-200"
-                    placeholder="Project Description"
+                    className="w-full p-3  border-gray-400 border-2 rounded-xl focus:outline-none focus:border-secondary"
+                    placeholder="Descripción"
                     {...register("description", {
                         required: "Una descripción del proyecto es obligatoria"
                     })}

@@ -31,8 +31,8 @@ export default function ConfirmAccountView() {
     return (
         <>     
             <div className="bg-tertiary p-10 rounded-xl">
-                <h1 className="text-4xl font-bold text-primary">Confirma tu Cuenta</h1>
-                <p className="text-xl font-light text-primary mt-5">
+                <h1 className="text-3xl font-normal text-primary">Confirma tu Cuenta</h1>
+                <p className="text-lg font-light text-primary mt-5">
                     Ingresa el código que recibiste {''}
                     <span className=" text-secondary font-bold"> por e-mail.</span>
                 </p>
@@ -40,7 +40,7 @@ export default function ConfirmAccountView() {
                     className="space-y-8 p-10 bg-primary mt-10 rounded-xl"
                 >
                     <label
-                    className="font-normal text-2xl text-center block text-secondary"
+                    className="font-normal text-lg text-center block text-secondary"
                     >Código de 6 dígitos</label>
                     <div className="flex justify-center gap-5">
                         <PinInput

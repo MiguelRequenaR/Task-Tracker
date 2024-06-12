@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { updateProject } from "@/api/ProjectApi";
 import { toast } from "react-toastify";
+import { ArrowUturnLeftIcon } from "@heroicons/react/20/solid";
 
 type EditProjectFormProps = {
     data: ProjectFormData,
@@ -48,16 +49,20 @@ export default function EditProjectForm({ data, projectId } : EditProjectFormPro
     return (
         <>
             <div className="max-w-3xl mx-auto">
-                <h1 className="text-5xl font-black">Edit Project</h1>
-                <p className="text-2xl font-light text-gray-500 mt-5">Complet the Form</p>
-                <nav className="my-5">
-                    <Link 
-                    className="bg-indigo-400 hover:bg-indigo-500 px-10 py-3 text-white text-xl font-bold cursor-pointer transition-colors"
-                    to="/"
-                    >
-                        Back to Dashboard
-                    </Link>
-                </nav>
+                <div className="flex items-center justify-between">
+                    <div>
+                        <h1 className="text-4xl font-semibold text-primary">Editar proyecto</h1>
+                        <p className="text-xl font-light text-gray-500 mt-5">Completa el formulario</p>
+                    </div>
+                    <nav className="my-5 flex bg-secondary hover:bg-green-600 px-5 py-3 text-white text-xl font-light cursor-pointer transition-colors items-center gap-3 rounded-xl">
+                        <ArrowUturnLeftIcon className="h-5 w-5" />
+                        <Link 
+                        to="/"
+                        >
+                            Volver a proyectos
+                        </Link>
+                    </nav>
+                </div>
                 <form
                     className="mt-10 bg-white shadow-lg p-10 rounded-lg"
                     onSubmit={handleSubmit(handleForm)}
@@ -69,8 +74,8 @@ export default function EditProjectForm({ data, projectId } : EditProjectFormPro
                     />
                     <input 
                         type="submit" 
-                        value="Save Changes" 
-                        className="bg-cyan-600 hover:bg-cyan-700 w-full p-3 text-white uppercase font-bold cursor-pointer transition-colors"
+                        value="Guardar cambios" 
+                        className="bg-secondary hover:bg-green-600 w-full p-3  text-white font-light text-xl cursor-pointer rounded-xl"
                     />
                 </form>
             </div>

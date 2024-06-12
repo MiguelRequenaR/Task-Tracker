@@ -5,7 +5,7 @@ import { ProjectFormData } from "@/types/index"
 import { createProject } from "@/api/ProjectApi"
 import { useMutation } from "@tanstack/react-query"
 import { toast } from "react-toastify"
-
+import { ArrowUturnLeftIcon } from "@heroicons/react/20/solid"
 
 export default function CreateProject() {
 
@@ -34,18 +34,22 @@ export default function CreateProject() {
     return (
         <>
             <div className="max-w-3xl mx-auto">
-                <h1 className="text-5xl font-black">Create/Register Project</h1>
-                <p className="text-2xl font-light text-gray-500 mt-5">Complet the Form</p>
-                <nav className="my-5">
-                    <Link 
-                    className="bg-cyan-600 hover:bg-cyan-700 px-10 py-3 text-white text-xl font-bold cursor-pointer transition-colors"
-                    to="/"
-                    >
-                        Back to Dashboard
-                    </Link>
-                </nav>
+                <div className="flex items-center justify-between">
+                    <div>
+                        <h1 className="text-4xl font-semibold">Crear proyecto</h1>
+                        <p className="text-xl font-light text-gray-500 mt-5">Completa el formulario</p>
+                    </div>
+                    <nav className="my-5 flex bg-secondary hover:bg-green-600 px-5 py-3 text-white text-xl font-light cursor-pointer transition-colors items-center gap-3 rounded-xl">
+                        <ArrowUturnLeftIcon className="h-5 w-5" />
+                        <Link 
+                            to="/"
+                        >
+                            Volver a proyectos
+                        </Link>
+                    </nav>
+                </div>
                 <form
-                    className="mt-10 bg-white shadow-lg p-10 rounded-lg"
+                    className="mt-10 bg-white shadow-xl p-10 rounded-xl"
                     onSubmit={handleSubmit(handleForm)}
                     noValidate
                 >
@@ -55,8 +59,8 @@ export default function CreateProject() {
                     />
                     <input 
                         type="submit" 
-                        value="Create Project" 
-                        className="bg-cyan-600 hover:bg-cyan-700 w-full p-3 text-white uppercase font-bold cursor-pointer transition-colors"
+                        value="Crear proyecto" 
+                        className="bg-secondary hover:bg-green-600 w-full p-3  text-white font-light text-xl cursor-pointer rounded-xl"
                     />
                 </form>
             </div>

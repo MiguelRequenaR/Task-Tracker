@@ -82,27 +82,27 @@ export default function AddTaskModal() {
                                 <DialogPanel className="w-full max-w-4xl transform overflow-hidden rounded-2xl bg-white text-left align-middle shadow-xl transition-all p-16">
                                     <DialogTitle
                                         as="h3"
-                                        className="font-black text-4xl text-primary my-5"
+                                        className="font-semibold text-4xl text-primary my-5"
                                     >
-                                        Crea una nueva tarea
+                                        Crear tarea
                                     </DialogTitle>
 
-                                    <p className="text-xl font-bold">Completa el siguiente formulario {''}
-                                        <span className="text-cyan-600">para crear una tarea</span>
+                                    <p className="text-xl font-light text-gray-500">Completa el siguiente formulario {''}
+                                        <span className="text-secondary">para crear una tarea.</span>
                                     </p>
                                     <form 
-                                        className='mt-10 space-y-3'
+                                        className='mt-10 space-y-4'
                                         noValidate
                                         onSubmit={handleSubmit(handleCreateTask)}
                                     >
                                         <TaskForm 
                                             register={register} 
-                                            errors={errors}                                      
+                                            errors={errors}                               
                                         />
                                         <input 
                                             type="submit" 
-                                            value="Guardar tarea"
-                                            className="bg-cyan-600 hover:bg-cyan-700 w-full p-3 text-white uppercase font-bold cursor-pointer transition-colors"
+                                            value="Crear tarea"
+                                            className="bg-secondary hover:bg-green-600 w-full p-3  text-white font-light text-xl cursor-pointer rounded-xl"
                                         />
                                     </form>
 

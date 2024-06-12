@@ -31,10 +31,9 @@ export default function ForgotPasswordView() {
     return (
         <>
             <div className="bg-tertiary p-10 rounded-xl">
-                <h1 className="text-4xl font-bold text-primary">Restablecer contraseña</h1>
-                <p className="text-xl font-light text-primary mt-5">
-                    Coloca tu e-mail para {''}
-                    <span className=" text-secondary font-bold"> restablecer tu contraseña.</span>
+                <h1 className="text-3xl font-normal text-primary">Restablecer contraseña</h1>
+                <p className="text-lg font-light text-gray-500 mt-5">Coloca tu e-mail para {''}
+                    <span className=" text-secondary font-normal"> restablecer tu contraseña.</span>
                 </p>
                 <form
                     onSubmit={handleSubmit(handleForgotPassword)}
@@ -50,7 +49,7 @@ export default function ForgotPasswordView() {
                         id="email"
                         type="email"
                         placeholder="Ingrese su email"
-                        className="w-full p-3  border-gray-400 border-2 rounded-xl focus:outline-none focus:border-secondary"
+                        className="w-full p-3  border-gray-400 border-2 rounded-xl "
                         {...register("email", {
                         required: "El Email es obligatorio",
                         pattern: {
@@ -66,24 +65,24 @@ export default function ForgotPasswordView() {
 
                     <input
                     type="submit"
-                    value='Enviar Instrucciones'
-                    className="bg-secondary hover:bg-green-600 w-full p-3  text-white font-black  text-xl cursor-pointer rounded-xl"
+                    value='Enviar instrucciones'
+                    className="bg-secondary hover:bg-green-600 w-full p-3  text-white font-light  text-xl cursor-pointer rounded-xl"
                     />
                 </form>
 
                 <nav className="mt-10 flex flex-col space-y-4">
                     <Link
                         to='/auth/login'
-                        className="text-center text-primary font-normal text-sm"
+                        className="text-center text-primary font-light text-sm"
                     >
-                        ¿Ya tienes cuenta? <span className="text-secondary font-bold">Inicia Sesión</span>
+                        ¿Ya tienes cuenta? <span className="text-secondary font-normal">Inicia Sesión</span>
                     </Link>
 
                     <Link
                         to='/auth/register'
-                        className="text-center text-primary font-normal text-sm"
+                        className="text-center text-primary font-light text-sm"
                     >
-                        ¿No tienes cuenta? <span className="text-secondary font-bold">Regístrate</span>
+                        ¿No tienes cuenta? <span className="text-secondary font-normal">Regístrate</span>
                     </Link>
                 </nav>
             </div>

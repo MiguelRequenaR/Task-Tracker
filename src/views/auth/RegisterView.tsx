@@ -42,7 +42,7 @@ export default function RegisterView() {
                 noValidate
             >
                 <div>
-                    <h1 className="text-4xl font-bold text-primary">Regístrate </h1>	
+                    <h1 className="text-3xl font-normal text-primary">Regístrate </h1>	
                     {/* <div className="mt-10 flex items-centerd justify-around gap-7">
                         <div className="flex gap-5 items-center border border-primary w-1/2 py-2 px-2 rounded-xl group hover:border-secondary cursor-pointer">
                             <img 
@@ -70,14 +70,14 @@ export default function RegisterView() {
                 </div> */}
                 <div className="flex flex-col gap-2">
                 <label
-                    className="font-semibold text-xl"
+                    className="font-light text-lg"
                     htmlFor="email"
                 >Email</label>
                 <input
                     id="email"
                     type="email"
                     placeholder="Ingrese su email"
-                    className="w-full p-3  border-gray-400 border-2 rounded-xl focus:outline-none focus:border-secondary"
+                    className="w-full p-3  border-gray-400 border-2 rounded-xl"
                     {...register("email", {
                     required: "El Email de registro es obligatorio",
                     pattern: {
@@ -93,7 +93,7 @@ export default function RegisterView() {
 
                 <div className="flex flex-col gap-2">
                 <label
-                    className="font-semibold text-xl"
+                    className="font-light text-lg"
                 >Nombre</label>
                 <input
                     type="name"
@@ -110,13 +110,13 @@ export default function RegisterView() {
 
                 <div className="flex flex-col gap-2">
                 <label
-                    className="font-semibold text-xl"
+                    className="font-light text-lg"
                 >Contraseña</label>
 
                 <input
                     type="password"
                     placeholder="Ingrese su contraseña"
-                    className="w-full p-3  border-gray-400 border-2 rounded-xl focus:outline-none focus:border-secondary"
+                    className="w-full p-3  border-gray-400 border-2 rounded-xl "
                     {...register("password", {
                     required: "El Password es obligatorio",
                     minLength: {
@@ -132,14 +132,14 @@ export default function RegisterView() {
 
                 <div className="flex flex-col gap-2">
                 <label
-                    className="font-semibold text-xl"
+                    className="font-light text-lg"
                 >Repita su contraseña</label>
 
                 <input
                     id="password_confirmation"
                     type="password"
                     placeholder="Repita su contraseña"
-                    className="w-full p-3  border-gray-400 border-2 rounded-xl focus:outline-none focus:border-secondary"
+                    className="w-full p-3  border-gray-400 border-2 rounded-xl "
                     {...register("passwordConfirmation", {
                     required: "Repetir Password es obligatorio",
                         validate: value => value === password || 'Los Passwords no son iguales'
@@ -154,18 +154,18 @@ export default function RegisterView() {
                 <input
                     type="submit"
                     value='Registrarme'
-                    className="bg-secondary hover:bg-green-600 w-full p-3  text-white font-black  text-xl cursor-pointer rounded-xl"
+                    className="bg-secondary hover:bg-green-600 w-full p-3  text-white font-light text-xl cursor-pointer rounded-xl"
                 />
                  <div className="flex items-center justify-between">
                     <Link
                         to={'/auth/forgot-password'}
                     >
-                        <p className="text-sm">Restablecer <span className="text-secondary text-sm font-bold">Contraseña</span></p>
+                        <p className="text-sm font-light">Restablecer <span className="text-secondary text-sm font-light">Contraseña</span></p>
                     </Link>
                     <Link
                         to={'/auth/login'}
                     >
-                        <p className="text-sm">¿Ya tienes una cuenta? <span className="text-secondary text-sm font-bold">Iniciar Sesión</span></p>
+                        <p className="text-sm font-light">¿Ya tienes una cuenta? <span className="text-secondary text-sm font-light">Iniciar Sesión</span></p>
                     </Link>
                 </div>
             </form>
