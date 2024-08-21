@@ -80,11 +80,11 @@ export default function DeleteProject() {
 
                                 <DialogTitle
                                     as="h3"
-                                    className="font-black text-4xl  my-5"
+                                    className="font-semibold text-4xl text-primary my-5"
                                 >Eliminar Proyecto </DialogTitle>
 
-                                <p className="text-xl font-bold">Confirma la eliminación del proyecto {''}
-                                    <span className="text-fuchsia-600">colocando tu password</span>
+                                <p className="text-xl font-light text-gray-500 mt-5">Confirma la eliminación del proyecto {''}
+                                    <span className="text-secondary">colocando tu password.</span>
                                 </p>
 
                                 <form
@@ -95,14 +95,14 @@ export default function DeleteProject() {
 
                                     <div className="flex flex-col gap-3">
                                         <label
-                                            className="font-normal text-2xl"
+                                            className="text-lg font-light"
                                             htmlFor="password"
                                         >Password</label>
                                         <input
                                             id="password"
                                             type="password"
                                             placeholder="Password Inicio de Sesión"
-                                            className="w-full p-3  border-gray-300 border"
+                                            className="w-full p-3  border-gray-400 border-2 rounded-xl focus:outline-none"
                                             {...register("password", {
                                                 required: "El password es obligatorio",
                                             })}
@@ -114,7 +114,7 @@ export default function DeleteProject() {
 
                                     <input
                                         type="submit"
-                                        className=" bg-fuchsia-600 hover:bg-fuchsia-700 w-full p-3  text-white font-black  text-xl cursor-pointer"
+                                        className=" bg-secondary hover:bg-green-600 w-full p-3  text-white font-light text-xl cursor-pointer rounded-xl"
                                         value='Eliminar Proyecto'
                                     />
                                 </form>

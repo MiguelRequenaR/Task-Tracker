@@ -75,7 +75,7 @@ export default function EditProjectForm({ data, projectId } : EditProjectFormPro
                     <input 
                         type="submit" 
                         value="Guardar cambios" 
-                        className="bg-secondary hover:bg-green-600 w-full p-3  text-white font-light text-xl cursor-pointer rounded-xl"
+                        className="bg-secondary hover:bg-green-600 w-full p-3 text-white font-light text-xl cursor-pointer rounded-xl"
                     />
                 </form>
             </div>
