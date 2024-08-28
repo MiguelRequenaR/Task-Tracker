@@ -53,7 +53,7 @@ export default function ChangePasswordView() {
                 id="current_password"
                 type="password"
                 placeholder="Contraseña actual"
-                className="w-full p-3  border-gray-400 border-2 rounded-xl focus:outline-none focus:border-secondary"
+                className="w-full p-3  border-gray-400 border-2 rounded-xl"
                 {...register("currentPassword", {
                     required: "La Contraseña actual es obligatorio",
                 })}
@@ -72,7 +72,7 @@ export default function ChangePasswordView() {
                 id="password"
                 type="password"
                 placeholder="Contraseña nueva"
-                className="w-full p-3  border-gray-400 border-2 rounded-xl focus:outline-none focus:border-secondary"
+                className="w-full p-3  border-gray-400 border-2 rounded-xl"
                 {...register("password", {
                     required: "La Contraseña nueva es obligatorio",
                     minLength: {
@@ -95,7 +95,7 @@ export default function ChangePasswordView() {
                 id="password_confirmation"
                 type="password"
                 placeholder="Repita la contraseña"
-                className="w-full p-3  border-gray-400 border-2 rounded-xl focus:outline-none focus:border-secondary"
+                className="w-full p-3  border-gray-400 border-2 rounded-xl"
                 {...register("passwordConfirmation", {
                     required: "Este campo es obligatorio",
                     validate: value => value === password || 'Los Passwords no son iguales'

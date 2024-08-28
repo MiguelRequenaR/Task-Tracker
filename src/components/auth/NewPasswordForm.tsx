@@ -64,7 +64,7 @@ export default function NewPasswordForm({token} : NewPasswordFormProps) {
                         <input
                             type="password"
                             placeholder="Ingrese su contraseña"
-                            className="w-full p-3  border-gray-400 border-2 rounded-xl focus:outline-none focus:border-secondary"
+                            className="w-full p-3  border-gray-400 border-2 rounded-xl"
                             {...register("password", {
                                 required: "La contraseña es obligatoria",
                                 minLength: {
@@ -87,7 +87,7 @@ export default function NewPasswordForm({token} : NewPasswordFormProps) {
                             id="passwordConfirmation"
                             type="password"
                             placeholder="Repita su contraseña"
-                            className="w-full p-3  border-gray-400 border-2 rounded-xl focus:outline-none focus:border-secondary"
+                            className="w-full p-3  border-gray-400 border-2 rounded-xl"
                             {...register("passwordConfirmation", {
                                 required: "Debe repetir su contraseña",
                                 validate: value => value === password || 'Las contraseñas no son iguales'

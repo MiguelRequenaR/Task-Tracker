@@ -77,7 +77,7 @@ export default function DashboardView() {
                           leave="transition ease-in duration-75" leaveFrom="transform opacity-100 scale-100"
                           leaveTo="transform opacity-0 scale-95">
                           <MenuItems
-                              className="absolute right-0 z-10 mt-2 w-56 origin-top-right font-bold rounded-md bg-white py-2 shadow-lg ring-1 ring-gray-900/5 focus:outline-none"
+                              className="absolute right-0 z-10 mt-2 w-56 origin-top-right font-light rounded-md bg-white py-2 shadow-lg ring-1 ring-gray-900/5 focus:outline-none"
                           >
                                   <MenuItem>
                                       <Link to={`/projects/${project._id}`}

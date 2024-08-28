@@ -49,22 +49,22 @@ export default function NewPassword({token, setToken, setIsValid}: NewPasswordPr
                     <div className="flex justify-center gap-5">
                         <PinInput value={token} onChange={handleChange} onComplete={handleComplete}>
                             <PinInputField 
-                                className="w-10 h-10 p-3 rounded-lg focus:outline-none focus:border-secondary border-2 placeholder-tertiary"
+                                className="w-10 h-10 p-3 rounded-lg border-2 placeholder-tertiary"
                             />
                             <PinInputField 
-                                className="w-10 h-10 p-3 rounded-lg focus:outline-none focus:border-secondary border-2 placeholder-tertiary"
+                                className="w-10 h-10 p-3 rounded-lg border-2 placeholder-tertiary"
                             />
                             <PinInputField 
-                                className="w-10 h-10 p-3 rounded-lg focus:outline-none focus:border-secondary border-2 placeholder-tertiary"
+                                className="w-10 h-10 p-3 rounded-lg border-2 placeholder-tertiary"
                             />
                             <PinInputField 
-                                className="w-10 h-10 p-3 rounded-lg focus:outline-none focus:border-secondary border-2 placeholder-tertiary"
+                                className="w-10 h-10 p-3 rounded-lg border-2 placeholder-tertiary"
                             />
                             <PinInputField 
-                                className="w-10 h-10 p-3 rounded-lg focus:outline-none focus:border-secondary border-2 placeholder-tertiary"
+                                className="w-10 h-10 p-3 rounded-lg border-2 placeholder-tertiary"
                             />
                             <PinInputField 
-                                className="w-10 h-10 p-3 rounded-lg focus:outline-none focus:border-secondary border-2 placeholder-tertiary"
+                                className="w-10 h-10 p-3 rounded-lg border-2 placeholder-tertiary"
                             />
                         </PinInput>
                     </div>

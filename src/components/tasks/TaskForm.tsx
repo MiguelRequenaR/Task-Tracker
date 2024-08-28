@@ -19,7 +19,7 @@ export default function TaskForm({errors, register} : TaskFormProps) {
                     id="name"
                     type="text"
                     placeholder="Nombre"
-                    className="ww-full p-3  border-gray-400 border-2 rounded-xl focus:outline-none focus:border-secondary"
+                    className="ww-full p-3  border-gray-400 border-2 rounded-xl"
                     {...register("name", {
                         required: "El nombre es obligatorio"
                     })}
@@ -37,7 +37,7 @@ export default function TaskForm({errors, register} : TaskFormProps) {
                 <textarea
                     id="description"
                     placeholder="Descripción"
-                    className="w-full p-3  border-gray-400 border-2 rounded-xl focus:outline-none focus:border-secondary"
+                    className="w-full p-3  border-gray-400 border-2 rounded-xl"
                     {...register("description", {
                         required: "La descripción es obligatoria"
                     })}

@@ -49,22 +49,22 @@ export default function ConfirmAccountView() {
                             onComplete={handleComplete}
                         >
                             <PinInputField 
-                                className="w-10 h-10 p-3 rounded-lg focus:outline-none focus:border-secondary border-2 placeholder-tertiary"
+                                className="w-10 h-10 p-3 rounded-lg border-2 placeholder-tertiary"
                             />
                             <PinInputField 
-                                className="w-10 h-10 p-3 rounded-lg focus:outline-none focus:border-secondary border-2 placeholder-tertiary"
+                                className="w-10 h-10 p-3 rounded-lg border-2 placeholder-tertiary"
                             />
                             <PinInputField 
-                                className="w-10 h-10 p-3 rounded-lg focus:outline-none focus:border-secondary border-2 placeholder-tertiary"
+                                className="w-10 h-10 p-3 rounded-lg border-2 placeholder-tertiary"
                             />
                             <PinInputField 
-                                className="w-10 h-10 p-3 rounded-lg focus:outline-none focus:border-secondary border-2 placeholder-tertiary"
+                                className="w-10 h-10 p-3 rounded-lg border-2 placeholder-tertiary"
                             />
                             <PinInputField 
-                                className="w-10 h-10 p-3 rounded-lg focus:outline-none focus:border-secondary border-2 placeholder-tertiary"
+                                className="w-10 h-10 p-3 rounded-lg border-2 placeholder-tertiary"
                             />
                             <PinInputField 
-                                className="w-10 h-10 p-3 rounded-lg focus:outline-none focus:border-secondary border-2 placeholder-tertiary"
+                                className="w-10 h-10 p-3 rounded-lg border-2 placeholder-tertiary"
                             />
                         </PinInput>
                     </div>

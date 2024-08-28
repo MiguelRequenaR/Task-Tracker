@@ -48,7 +48,7 @@ export default function ProfileForm({ data } : ProfileFormProps) {
                             id="name"
                             type="text"
                             placeholder="Tu Nombre"
-                            className="w-full p-3  border-2 rounded-xl focus:outline-none focus:border-secondary"
+                            className="w-full p-3  border-2 rounded-xl"
                             {...register("name", {
                                 required: "Nombre de usuario es obligatoro",
                             })}
@@ -67,7 +67,7 @@ export default function ProfileForm({ data } : ProfileFormProps) {
                             id="text"
                             type="email"
                             placeholder="Tu Email"
-                            className="w-full p-3 border-2 rounded-xl focus:outline-none focus:border-secondary"
+                            className="w-full p-3 border-2 rounded-xl"
                             {...register("email", {
                                 required: "EL e-mail es obligatorio",
                                 pattern: {

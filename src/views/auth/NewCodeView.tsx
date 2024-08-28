@@ -51,7 +51,7 @@ export default function RegisterView() {
                             id="email"
                             type="email"
                             placeholder="Ingrese su email"
-                            className="w-full p-3  border-gray-400 border-2 rounded-xl focus:outline-none focus:border-secondary"
+                            className="w-full p-3  border-gray-400 border-2 rounded-xl"
                             {...register("email", {
                                 required: "El Email es obligatorio",
                                 pattern: {

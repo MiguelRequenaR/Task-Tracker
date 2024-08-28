@@ -47,7 +47,7 @@ export default function AddMemberForm() {
                         id="name"
                         type="text"
                         placeholder="E-mail del usuario a Agregar"
-                        className="w-full p-3  border-gray-400 border-2 rounded-xl focus:outline-none focus:border-secondary"
+                        className="w-full p-3  border-gray-400 border-2 rounded-xl"
                         {...register("email", {
                             required: "El Email es obligatorio",
                             pattern: {

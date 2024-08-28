@@ -98,7 +98,7 @@ export default function RegisterView() {
                 <input
                     type="name"
                     placeholder="Ingrese su nombre"
-                    className="w-full p-3  border-gray-400 border-2 rounded-xl focus:outline-none focus:border-secondary"
+                    className="w-full p-3  border-gray-400 border-2 rounded-xl"
                     {...register("name", {
                     required: "El Nombre de usuario es obligatorio",
                     })}
