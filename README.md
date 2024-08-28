@@ -1,30 +1,28 @@
-# React + TypeScript + Vite
+# TASK - TRACKER
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Descripción del Proyecto
 
-Currently, two official plugins are available:
+Task-Tracker es una aplicación web diseñada para ayudar a los usuarios a organizar y gestionar sus tareas diarias de manera eficiente. Esta herramienta permite a los usuarios crear, editar, y dar seguimiento a sus tareas, mejorando la productividad y la gestión del tiempo.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Características principales:
+- Creación y edición de tareas
+- Asignación de fechas límite
+- Categorización de tareas
+- Seguimiento del progreso
+- Interfaz intuitiva y fácil de usar
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Este proyecto está desarrollado utilizando tecnologías web modernas para ofrecer una experiencia de usuario fluida y responsive.
+-FrontEnd:
+  React
+  React Query
+  TypeScript
+  Vite
+  Axios
+  TailwindCss
+  Toastify
+-BackEnd
+  MongoDB
+  Express
+  NodeJS
+  Mongoose
+  JWT (Json Web Token)  
