@@ -5,10 +5,11 @@ import { ConfirmToken } from "@/types";
 import { useMutation } from "@tanstack/react-query";
 import { toast } from "react-toastify";
 import { confirmAccount } from "@/api/AuthApi";
+import bg from '../../../public/bg.jpg'
 
 export default function ConfirmAccountView() {
 
-    const [token, setToken ] = useState<ConfirmToken['token']>("");
+    const [token, setToken] = useState<ConfirmToken['token']>("");
 
     const { mutate } = useMutation({
         mutationFn: confirmAccount,
@@ -25,60 +26,67 @@ export default function ConfirmAccountView() {
     };
 
     const handleComplete = (token: ConfirmToken['token']) => {
-        mutate({token});
+        mutate({ token });
     };
 
     return (
-        <>     
-            <div className="bg-tertiary p-10 rounded-xl">
-                <h1 className="text-3xl font-normal text-primary">Confirma tu Cuenta</h1>
-                <p className="text-lg font-light text-primary mt-5">
-                    Ingresa el código que recibiste {''}
-                    <span className=" text-secondary font-bold"> por e-mail.</span>
-                </p>
-                <form
-                    className="space-y-8 p-10 bg-primary mt-10 rounded-xl"
-                >
-                    <label
-                    className="font-normal text-lg text-center block text-secondary"
-                    >Código de 6 dígitos</label>
-                    <div className="flex justify-center gap-5">
-                        <PinInput
-                            value={token}
-                            onChange={handleChange}
-                            onComplete={handleComplete}
+        <>
+            <div className="grid grid-cols-1 lg:grid-cols-2 h-screen bg-tertiary">
+                <div className="flex flex-col justify-center items-center">
+                    <div className="bg-tertiary p-10 rounded-xl">
+                        <h1 className="text-3xl font-normal text-primary">Confirma tu Cuenta</h1>
+                        <p className="text-lg font-light text-primary mt-5">
+                            Ingresa el código que recibiste {''}
+                            <span className=" text-secondary font-bold"> por e-mail.</span>
+                        </p>
+                        <form
+                            className="space-y-8 p-10 bg-primary mt-10 rounded-xl"
                         >
-                            <PinInputField 
-                                className="w-10 h-10 p-3 rounded-lg border-2 placeholder-tertiary"
-                            />
-                            <PinInputField 
-                                className="w-10 h-10 p-3 rounded-lg border-2 placeholder-tertiary"
-                            />
-                            <PinInputField 
-                                className="w-10 h-10 p-3 rounded-lg border-2 placeholder-tertiary"
-                            />
-                            <PinInputField 
-                                className="w-10 h-10 p-3 rounded-lg border-2 placeholder-tertiary"
-                            />
-                            <PinInputField 
-                                className="w-10 h-10 p-3 rounded-lg border-2 placeholder-tertiary"
-                            />
-                            <PinInputField 
-                                className="w-10 h-10 p-3 rounded-lg border-2 placeholder-tertiary"
-                            />
-                        </PinInput>
+                            <label
+                                className="font-normal text-lg text-center block text-secondary"
+                            >Código de 6 dígitos</label>
+                            <div className="flex justify-center gap-5">
+                                <PinInput
+                                    value={token}
+                                    onChange={handleChange}
+                                    onComplete={handleComplete}
+                                >
+                                    <PinInputField
+                                        className="w-10 h-10 p-3 rounded-lg border-2 placeholder-tertiary"
+                                    />
+                                    <PinInputField
+                                        className="w-10 h-10 p-3 rounded-lg border-2 placeholder-tertiary"
+                                    />
+                                    <PinInputField
+                                        className="w-10 h-10 p-3 rounded-lg border-2 placeholder-tertiary"
+                                    />
+                                    <PinInputField
+                                        className="w-10 h-10 p-3 rounded-lg border-2 placeholder-tertiary"
+                                    />
+                                    <PinInputField
+                                        className="w-10 h-10 p-3 rounded-lg border-2 placeholder-tertiary"
+                                    />
+                                    <PinInputField
+                                        className="w-10 h-10 p-3 rounded-lg border-2 placeholder-tertiary"
+                                    />
+                                </PinInput>
+                            </div>
+
+                        </form>
+
+                        <nav className="mt-10 flex flex-col space-y-4">
+                            <Link
+                                to='/auth/request-confirmation-code'
+                                className="text-center text-secondary font-semibold text-lg"
+                            >
+                                Solicitar un nuevo Código
+                            </Link>
+                        </nav>
                     </div>
-
-                </form>
-
-                <nav className="mt-10 flex flex-col space-y-4">
-                    <Link
-                        to='/auth/request-confirmation-code'
-                        className="text-center text-secondary font-semibold text-lg"
-                    >
-                        Solicitar un nuevo Código
-                    </Link>
-                </nav>
+                </div>
+                <div className="h-screen hidden lg:block">
+                    <img src={bg} alt="background" className="w-full h-full object-cover" />
+                </div>
             </div>
         </>
     )

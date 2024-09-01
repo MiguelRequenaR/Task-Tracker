@@ -11,6 +11,7 @@ export async function registerAccount(formData: UserRegisterForm) {
     }catch(error){
         if(isAxiosError(error) && error.response){
             throw new Error(error.response.data.error);
+            
         }
     }
 }
