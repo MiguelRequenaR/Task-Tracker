@@ -33,7 +33,7 @@ export default function ForgotPasswordView() {
         <>
             <div className="grid grid-cols-1 lg:grid-cols-2 h-screen bg-tertiary">
                 <div className="flex flex-col justify-center items-center">
-                    <div className="bg-tertiary p-10 rounded-xl w-[90%]">
+                    <div className="bg-tertiary p-10 rounded-xl w-[70%]">
                         <h1 className="text-3xl font-normal text-primary">Restablecer contraseña</h1>
                         <p className="text-lg font-light text-gray-500 mt-5">Coloca tu e-mail para {''}
                             <span className=" text-secondary font-normal"> restablecer tu contraseña.</span>

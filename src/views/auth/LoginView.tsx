@@ -40,7 +40,7 @@ export default function LoginView() {
                 <div className="flex flex-col justify-center items-center">
                     <form
                         onSubmit={handleSubmit(handleLogin)}
-                        className="space-y-6 p-10 rounded-xl w-[90%]"
+                        className="space-y-6 p-10 rounded-xl w-[70%]"
                         noValidate
                     >
                         <div>

@@ -44,7 +44,7 @@ export default function RegisterView() {
                 <div className="flex flex-col justify-center items-center">
                     <form
                         onSubmit={handleSubmit(handleRegister)}
-                        className="space-y-6 p-10 rounded-xl w-[90%]"
+                        className="space-y-6 p-10 rounded-xl w-[70%]"
                         noValidate
                     >
                         <div>
