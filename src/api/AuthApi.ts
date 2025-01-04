@@ -80,7 +80,6 @@ export async function changePassword(formData: ForgotPasswordForm){
     }
 }
 
-/* Función de validación de token comentada temporalmente
 //Validar token
 export async function validateToken(formData: { token: string }) {
     try{
@@ -93,7 +92,6 @@ export async function validateToken(formData: { token: string }) {
         }
     }
 }
-*/
 
 //Actualizar contraseña
 export async function updatePassword({formData, token} : {formData: NewPasswordForm, token: string}) {

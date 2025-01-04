@@ -119,3 +119,7 @@ const teamSchema = userSchema.pick({
 export const teamMemberSchema = z.array(teamSchema);
 export type Team = z.infer<typeof teamSchema>;
 export type TeamMemberForm = Pick<Team, 'email'>
+
+export type ConfirmToken = {
+    token: string;
+}

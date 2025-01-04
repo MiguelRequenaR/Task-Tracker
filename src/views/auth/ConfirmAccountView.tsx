@@ -1,4 +1,4 @@
-// Exportamos un componente vacío temporalmente para evitar errores de importación
+// Agregar pantalla de confirmación de cuenta
 export default function ConfirmAccountView() {
     return null;
 }

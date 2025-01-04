@@ -32,6 +32,19 @@ export default function NewPassword({token, setToken, setIsValid}: NewPasswordPr
         mutate({token});
     }
 
+    const validateTokenRequest = async (token: string) => {
+        try {
+            await validateToken({ token });
+        } catch (error) {
+            if (error instanceof Error) {
+                toast.error(error.message);
+            } else {
+                toast.error('Error al validar el token');
+            }
+            // Redirigir al usuario o manejar el error según sea necesario
+        }
+    }
+
     return (
         <>
             <div className='bg-tertiary p-10 rounded-xl'>  
