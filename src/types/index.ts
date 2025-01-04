@@ -13,11 +13,13 @@ const authSchema = z.object({
 type AuthUser = z.infer<typeof authSchema>
 export type UserLoginForm = Pick<AuthUser, 'email' | 'password'>
 export type UserRegisterForm = Pick<AuthUser, 'name' | 'email' | 'password' | 'passwordConfirmation'>
+/* Tipos relacionados con verificación - comentados temporalmente
 export type RequestConfirmationCodeForm = Pick<AuthUser, 'email'>
+export type ConfirmToken = Pick<AuthUser, 'token'>
+*/
 export type ForgotPasswordForm = Pick<AuthUser, 'email'>
 export type NewPasswordForm = Pick<AuthUser, 'password' | 'passwordConfirmation'>
 export type ChangePasswordForm = Pick<AuthUser, 'currentPassword' | 'password' | 'passwordConfirmation'>
-export type ConfirmToken = Pick<AuthUser, 'token'>
 export type CheckPasswordForm = Pick<AuthUser, 'password'>
 
 //Users

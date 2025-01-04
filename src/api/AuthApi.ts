@@ -1,6 +1,13 @@
 import api from "@/lib/axios";
 import { isAxiosError } from "axios";
-import { CheckPasswordForm, ConfirmToken, ForgotPasswordForm, NewPasswordForm, RequestConfirmationCodeForm, UserLoginForm, UserRegisterForm, userSchema } from "@/types/index";
+import { 
+    CheckPasswordForm, 
+    ForgotPasswordForm, 
+    NewPasswordForm, 
+    UserLoginForm, 
+    UserRegisterForm, 
+    userSchema 
+} from "@/types/index";
 
 //Crear una cuenta
 export async function registerAccount(formData: UserRegisterForm) {
@@ -11,12 +18,13 @@ export async function registerAccount(formData: UserRegisterForm) {
     }catch(error){
         if(isAxiosError(error) && error.response){
             throw new Error(error.response.data.error);
-            
         }
     }
 }
+
+/* Funciones de verificación comentadas temporalmente
 //Confirmar cuenta
-export async function confirmAccount(formData: ConfirmToken) {
+export async function confirmAccount(formData: { token: string }) {
     try{
         const url = '/auth/confirm-email';
         const { data } = await api.post<string>(url, formData);
@@ -27,8 +35,9 @@ export async function confirmAccount(formData: ConfirmToken) {
         }
     }
 }
+
 //Solicitar código de confirmación
-export async function requestConfirmationCode(formData: RequestConfirmationCodeForm) {
+export async function requestConfirmationCode(formData: { email: string }) {
     try{
         const url = '/auth/request-confirmation-code';
         const { data } = await api.post<string>(url, formData);
@@ -39,6 +48,8 @@ export async function requestConfirmationCode(formData: RequestConfirmationCodeF
         }
     }
 }
+*/
+
 //Iniciar sesión
 export async function login(formData: UserLoginForm) {
     try{
@@ -55,6 +66,7 @@ export async function login(formData: UserLoginForm) {
         }
     }
 }
+
 //Cambiar contraseña
 export async function changePassword(formData: ForgotPasswordForm){
     try{
@@ -67,8 +79,10 @@ export async function changePassword(formData: ForgotPasswordForm){
         }
     }
 }
+
+/* Función de validación de token comentada temporalmente
 //Validar token
-export async function validateToken(formData: ConfirmToken) {
+export async function validateToken(formData: { token: string }) {
     try{
         const url = '/auth/validate-token';
         const { data } = await api.post<string>(url, formData);
@@ -79,8 +93,10 @@ export async function validateToken(formData: ConfirmToken) {
         }
     }
 }
+*/
+
 //Actualizar contraseña
-export async function updatePassword({formData, token} : {formData: NewPasswordForm, token: ConfirmToken['token']}) {
+export async function updatePassword({formData, token} : {formData: NewPasswordForm, token: string}) {
     try{
         const url = `/auth/update-password/${token}`;
         const { data } = await api.post<string>(url, formData);
@@ -91,6 +107,7 @@ export async function updatePassword({formData, token} : {formData: NewPasswordF
         }
     }
 }
+
 //Obtener el usuario que esta autenticado
 export async function getUser() {
     try{
@@ -105,6 +122,7 @@ export async function getUser() {
         }
     }
 }
+
 //Verificar que la contraseña es correcta
 export async function checkPassword(formData: CheckPasswordForm) {
     try{
