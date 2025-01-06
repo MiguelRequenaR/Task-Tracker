@@ -35,10 +35,10 @@ export default function ProjectDetails() {
     //Si hay data se muestra el formulario
     if(data && user) return (
         <>
-            <h1 className="text-4xl text-primary font-semibold">
+            <h1 className="text-4xl text-primary font-semibold dark:text-tertiary">
                 {data.projectName}
             </h1>
-            <p className="text-xl font-light text-gray-500 mt-5">{data.description}</p>
+            <p className="text-xl font-light text-gray-500 mt-5 dark:text-tertiary">{data.description}</p>
 
             {isManager(data.manager, user._id) && (
                 <nav className="my-5 lg:flex gap-3">

@@ -96,7 +96,7 @@ export default function TaskList({tasks, canEdit}: TaskListProps) {
 
     return (
         <>
-            <h2 className="text-3xl text-primary font-light my-10">Tareas Disponibles</h2>
+            <h2 className="text-3xl text-primary font-light my-10 dark:text-tertiary">Tareas Disponibles</h2>
 
             <div className='flex gap-5 overflow-x-scroll 2xl:overflow-auto pb-32'>
                 <DndContext
@@ -117,7 +117,7 @@ export default function TaskList({tasks, canEdit}: TaskListProps) {
 
                             <ul className='mt-5 space-y-5'>
                                 {tasks.length === 0 ? (
-                                    <li className="text-gray-500 text-center font-normal pt-3">No hay tareas</li>
+                                    <li className="text-gray-500 text-center font-normal pt-3 dark:text-tertiary">No hay tareas</li>
                                 ) : (
                                     tasks.map(task => <TaskCard key={task._id} task={task} canEdit={canEdit} />)
                                 )}

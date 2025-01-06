@@ -49,7 +49,7 @@ export default function TaskCard({task, canEdit}: TaskCardProps) {
     }
     return (
         <li 
-            className="flex justify-between p-5 bg-white gap-3 rounded-xl"
+            className="flex justify-between p-5 bg-white dark:bg-gray-800 dark:border gap-3 rounded-xl"
             {...listeners}
             {...attributes}
             ref={setNodeRef}
@@ -65,16 +65,16 @@ export default function TaskCard({task, canEdit}: TaskCardProps) {
 
                 <button
                     type="button"
-                    className="text-xl font-light text-primary text-left"
+                    className="text-xl font-light text-primary text-left dark:text-tertiary"
                     onClick={() => navigate(location.pathname + `?viewTask=${task._id}`)}
                 >
                     {task.name}
                 </button>
-                <p className="text-gray-500">{task.description}</p>
+                <p className="text-gray-500 dark:text-tertiary">{task.description}</p>
             </div>
             <div className="flex shrink-0  gap-x-6">
                 <Menu as="div" className="relative flex-none">
-                    <MenuButton className="-m-2.5 block p-2.5 text-gray-500 hover:text-gray-900">
+                    <MenuButton className="-m-2.5 block p-2.5 text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200">
                         <span className="sr-only">opciones</span>
                         <EllipsisVerticalIcon className="h-6 w-6" aria-hidden="true" />
                     </MenuButton>
@@ -82,11 +82,11 @@ export default function TaskCard({task, canEdit}: TaskCardProps) {
                         enterTo="transform opacity-100 scale-100" leave="transition ease-in duration-75"
                         leaveFrom="transform opacity-100 scale-100" leaveTo="transform opacity-0 scale-95">
                         <MenuItems
-                            className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white py-2 shadow-lg ring-1 ring-gray-900/5 focus:outline-none font-light">
+                            className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white dark:bg-black py-2 shadow-lg ring-1 ring-gray-900/5 focus:outline-none font-light">
                             <MenuItem>
                                 <button 
                                     type='button' 
-                                    className='block px-3 py-1 text-sm leading-6 text-gray-900'
+                                    className='block px-3 py-1 text-sm leading-6 dark:text-tertiary text-gray-900'
                                     onClick={() => navigate(location.pathname + `?viewTask=${task._id}`)}
                                 >
                                     Detalles de tarea
@@ -97,7 +97,7 @@ export default function TaskCard({task, canEdit}: TaskCardProps) {
                                     <MenuItem>
                                         <button 
                                             type='button' 
-                                            className='block px-3 py-1 text-sm leading-6 text-gray-900'
+                                            className='block px-3 dark:text-tertiary py-1 text-sm leading-6 text-gray-900'
                                             onClick={() => navigate(location.pathname + `?editTask=${task._id}`)}
                                         >
                                             Editar tarea

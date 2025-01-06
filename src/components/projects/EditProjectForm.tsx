@@ -51,8 +51,8 @@ export default function EditProjectForm({ data, projectId } : EditProjectFormPro
             <div className="max-w-3xl mx-auto">
                 <div className="flex items-center justify-between">
                     <div>
-                        <h1 className="text-4xl font-semibold text-primary">Editar proyecto</h1>
-                        <p className="text-xl font-light text-gray-500 mt-5">Completa el formulario</p>
+                        <h1 className="text-4xl font-semibold text-primary dark:text-tertiary">Editar proyecto</h1>
+                        <p className="text-xl font-light text-gray-500 mt-5 dark:text-tertiary">Completa el formulario</p>
                     </div>
                     <nav className="my-5 flex bg-secondary hover:bg-green-600 px-5 py-3 text-white text-xl font-light cursor-pointer transition-colors items-center gap-3 rounded-xl">
                         <ArrowUturnLeftIcon className="h-5 w-5" />
@@ -64,7 +64,7 @@ export default function EditProjectForm({ data, projectId } : EditProjectFormPro
                     </nav>
                 </div>
                 <form
-                    className="mt-10 bg-white shadow-lg p-10 rounded-lg"
+                    className="mt-10 bg-white dark:bg-gray-800 dark:border shadow-lg p-10 rounded-lg"
                     onSubmit={handleSubmit(handleForm)}
                     noValidate
                 >

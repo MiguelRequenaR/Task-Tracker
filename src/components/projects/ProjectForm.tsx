@@ -10,8 +10,8 @@ type ProjectFormProps = {
 export default function ProjectForm({ errors, register }: ProjectFormProps) {
     return (
         <>
-            <div className="mb-5 space-y-3">
-                <label htmlFor="projectName" className="text-lg font-light">
+            <div className="mb-5 space-y-3 ">
+                <label htmlFor="projectName" className="text-lg font-light dark:text-tertiary">
                     Nombre
                 </label>
                 <input
@@ -29,7 +29,7 @@ export default function ProjectForm({ errors, register }: ProjectFormProps) {
             </div>
 
             <div className="mb-5 space-y-3">
-                <label htmlFor="clientName" className="text-lg  font-light">
+                <label htmlFor="clientName" className="text-lg font-light dark:text-tertiary">
                     Nombre del cliente
                 </label>
                 <input
@@ -47,7 +47,7 @@ export default function ProjectForm({ errors, register }: ProjectFormProps) {
             </div>
 
             <div className="mb-5 space-y-3">
-                <label htmlFor="description" className="text-lg  font-light">
+                <label htmlFor="description" className="text-lg font-light dark:text-tertiary">
                     Descripción
                 </label>
                 <textarea

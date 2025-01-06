@@ -12,14 +12,14 @@ export default function TaskForm({errors, register} : TaskFormProps) {
         <>
             <div className="flex flex-col gap-2">
                 <label
-                    className="font-light text-lg"
+                    className="font-light text-lg dark:text-tertiary"
                     htmlFor="name"
                 >Nombre de la tarea</label>
                 <input
                     id="name"
                     type="text"
                     placeholder="Nombre"
-                    className="ww-full p-3  border-gray-400 border-2 rounded-xl"
+                    className="ww-full p-3 border-gray-400 border-2 rounded-xl"
                     {...register("name", {
                         required: "El nombre es obligatorio"
                     })}
@@ -31,7 +31,7 @@ export default function TaskForm({errors, register} : TaskFormProps) {
 
             <div className="flex flex-col gap-2">
                 <label
-                    className="font-light text-lg"
+                    className="font-light text-lg dark:text-tertiary"
                     htmlFor="description"
                 >Descripción de la tarea</label>
                 <textarea

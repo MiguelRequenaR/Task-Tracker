@@ -26,11 +26,11 @@ export default function DashboardView() {
   if(isLoading && authLoading) return 'Cargando...';
 
   if(data && user) return (
-    <>
+    <div>
       <div className='lg:flex items-center justify-between'>
         <div className='p-3'>
-          <h1 className="text-5xl text-primary font-semibold">Proyectos</h1>
-          <p className="text-2xl font-light mt-3 text-gray-500">Administra tus proyectos</p>
+          <h1 className="text-5xl text-primary font-semibold dark:text-tertiary">Proyectos</h1>
+          <p className="text-2xl font-light mt-3 text-gray-500 dark:text-tertiary">Administra tus proyectos</p>
         </div>
         <nav className="my-5 flex bg-secondary hover:bg-green-600 px-5 py-3 text-white text-xl font-light cursor-pointer transition-colors items-center gap-3 rounded-xl">
           <PlusIcon className='h-5 w-5' />
@@ -56,12 +56,12 @@ export default function DashboardView() {
                       }
                     </div>
                       <Link to={`/projects/${project._id}`}
-                          className="text-gray-600 cursor-pointer hover:underline text-3xl font-bold"
+                          className="text-gray-600 cursor-pointer hover:underline text-3xl font-bold dark:text-tertiary"
                       >{project.projectName}</Link>
-                      <p className="text-sm text-gray-400">
+                      <p className="text-sm text-gray-400 dark:text-tertiary">
                           Cliente: {project.clientName}
                       </p>
-                      <p className="text-sm text-gray-400">
+                      <p className="text-sm text-gray-400 dark:text-tertiary">
                           {project.description}
                       </p>
                   </div>
@@ -77,11 +77,11 @@ export default function DashboardView() {
                           leave="transition ease-in duration-75" leaveFrom="transform opacity-100 scale-100"
                           leaveTo="transform opacity-0 scale-95">
                           <MenuItems
-                              className="absolute right-0 z-10 mt-2 w-56 origin-top-right font-light rounded-md bg-white py-2 shadow-lg ring-1 ring-gray-900/5 focus:outline-none"
+                              className="absolute right-0 z-10 mt-2 w-56 origin-top-right font-light rounded-md bg-white dark:bg-black py-2 shadow-lg ring-1 ring-gray-900/5 focus:outline-none"
                           >
                                   <MenuItem>
                                       <Link to={`/projects/${project._id}`}
-                                          className='block px-3 py-1 text-sm leading-6 text-gray-900'>
+                                          className='block px-3 py-1 text-sm leading-6 text-gray-900 dark:text-tertiary'>
                                       Ver Proyecto
                                       </Link>
                                   </MenuItem>
@@ -91,7 +91,7 @@ export default function DashboardView() {
                                     <>
                                       <MenuItem>
                                           <Link to={`/projects/${project._id}/edit`}
-                                              className='block px-3 py-1 text-sm leading-6 text-gray-900'>
+                                              className='block px-3 py-1 text-sm leading-6 text-gray-900 dark:text-tertiary'>
                                           Editar Proyecto
                                           </Link>
                                       </MenuItem>
@@ -126,6 +126,6 @@ export default function DashboardView() {
 
       <DeleteProject />
 
-    </>
+    </div>
   )
 }

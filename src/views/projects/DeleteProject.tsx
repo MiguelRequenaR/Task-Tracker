@@ -76,14 +76,14 @@ export default function DeleteProject() {
                             leaveFrom="opacity-100 scale-100"
                             leaveTo="opacity-0 scale-95"
                         >
-                            <DialogPanel className="w-full max-w-4xl transform overflow-hidden rounded-2xl bg-white text-left align-middle shadow-xl transition-all p-16">
+                            <DialogPanel className="w-full max-w-4xl transform overflow-hidden rounded-2xl bg-white dark:bg-gray-800 dark:border text-left align-middle shadow-xl transition-all p-16">
 
                                 <DialogTitle
                                     as="h3"
-                                    className="font-semibold text-4xl text-primary my-5"
+                                    className="font-semibold text-4xl text-primary my-5 dark:text-tertiary"
                                 >Eliminar Proyecto </DialogTitle>
 
-                                <p className="text-xl font-light text-gray-500 mt-5">Confirma la eliminación del proyecto {''}
+                                <p className="text-xl font-light text-gray-500 mt-5 dark:text-tertiary">Confirma la eliminación del proyecto {''}
                                     <span className="text-secondary">colocando tu password.</span>
                                 </p>
 
@@ -95,7 +95,7 @@ export default function DeleteProject() {
 
                                     <div className="flex flex-col gap-3">
                                         <label
-                                            className="text-lg font-light"
+                                            className="text-lg font-light dark:text-tertiary"
                                             htmlFor="password"
                                         >Password</label>
                                         <input

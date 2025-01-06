@@ -4,7 +4,7 @@ type DropTaskProps = {
     status: string,
 }
 
-export default function DropTask({status}: DropTaskProps) {
+export default function wDropTask({status}: DropTaskProps) {
 
     const { isOver ,setNodeRef } = useDroppable({
         id: status,
@@ -18,7 +18,7 @@ export default function DropTask({status}: DropTaskProps) {
         <div
             ref={setNodeRef}
             style={style}
-            className="text-xs font-semibold p-2 border border-dashed border-slate-500 mt-5 grid cursor-pointer place-content-center text-slate-600"
+            className="text-xs font-semibold p-2 border border-dashed border-slate-500 mt-5 grid cursor-pointer place-content-center text-slate-600 dark:text-tertiary"
         >
             Soltar tarea aquí
         </div>

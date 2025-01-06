@@ -40,10 +40,10 @@ export default function ProjectTeam() {
 
     if(data) return (
         <>
-            <h1 className="text-4xl text-primary font-semibold">
-                Miembros del proyecto
+            <h1 className="text-4xl text-primary font-semibold dark:text-tertiary">
+                Miembros del Proyecto
             </h1>
-            <p className="text-xl font-light text-gray-500 mt-5">Administra los colaboradores de tu proyecto.</p>
+            <p className="text-xl font-light text-gray-500 mt-5 dark:text-tertiary">Administra los colaboradores de tu proyecto.</p>
 
             <nav className="my-5 lg:flex gap-3">
                 <button 
@@ -63,24 +63,24 @@ export default function ProjectTeam() {
                 </Link>
             </nav>
 
-            <h2 className="text-4xl font-semibold text-primary my-10">Miembros actuales</h2>
+            <h2 className="text-2xl font-semibold text-primary my-10 dark:text-tertiary">Miembros actuales</h2>
             {data.length ? (
-                <ul role="list" className="divide-y divide-gray-100 border border-gray-100 mt-10 rounded-xl bg-white shadow-lg">
+                <ul role="list" className="divide-y divide-gray-100 border border-gray-100 mt-10 rounded-xl bg-white shadow-lg dark:bg-gray-800">
                     {data?.map((member) => (
                         <li key={member._id} className="flex justify-between gap-x-6 px-5 py-10">
                             <div className="flex min-w-0 gap-x-4">
                                 <div className="min-w-0 flex-auto space-y-2">
-                                    <p className="text-2xl font-bold text-gray-600">
+                                    <p className="text-2xl font-bold text-gray-600 dark:text-tertiary">
                                         {member.name}
                                     </p>
-                                    <p className="text-sm text-gray-400">
+                                    <p className="text-sm text-gray-400 dark:text-tertiary">
                                         {member.email}
                                     </p>
                                 </div>
                             </div>
                             <div className="flex shrink-0 items-center gap-x-6">
                                 <Menu as="div" className="relative flex-none">
-                                    <MenuButton className="-m-2.5 block p-2.5 text-gray-500 hover:text-gray-900">
+                                    <MenuButton className="-m-2.5 block p-2.5 text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200">
                                             <span className="sr-only">opciones</span>
                                             <EllipsisVerticalIcon className="h-9 w-9" aria-hidden="true" />
                                     </MenuButton>
@@ -93,7 +93,7 @@ export default function ProjectTeam() {
                                         leaveFrom="transform opacity-100 scale-100"
                                         leaveTo="transform opacity-0 scale-95"
                                     >
-                                        <MenuItems className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white py-2 shadow-lg ring-1 ring-gray-900/5 focus:outline-none">
+                                        <MenuItems className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white dark:bg-black py-2 shadow-lg ring-1 ring-gray-900/5 focus:outline-none">
                                             <MenuItem>
                                                 <button
                                                     type='button'

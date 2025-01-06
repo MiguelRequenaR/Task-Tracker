@@ -29,19 +29,19 @@ export default function ProfileForm({ data } : ProfileFormProps) {
     return (
         <>
             <div className="mx-auto max-w-3xl g">
-                <h1 className="text-4xl font-semibold ">Mi Perfil</h1>
-                <p className="text-xl font-light text-gray-500 mt-5">Aquí puedes actualizar {""}
+                <h1 className="text-3xl font-semibold dark:text-tertiary">Mi Perfil</h1>
+                <p className="text-xl font-light text-gray-500 mt-5 dark:text-tertiary">Aquí puedes actualizar {""}
                     <span className="text-secondary font-normal">tu información.</span>
                 </p>
 
                 <form
                     onSubmit={handleSubmit(handleEditProfile)}
-                    className=" mt-14 space-y-5  bg-white shadow-2xl p-10 rounded-xl"
+                    className=" mt-14 space-y-5 bg-white dark:bg-gray-800 dark:border shadow-2xl p-10 rounded-xl"
                     noValidate
                 >
                     <div className="mb-5 space-y-3">
                         <label
-                            className="text-lg font-light"
+                            className="text-lg font-light dark:text-tertiary"
                             htmlFor="name"
                         >Nombre</label>
                         <input
@@ -60,7 +60,7 @@ export default function ProfileForm({ data } : ProfileFormProps) {
 
                     <div className="mb-5 space-y-3">
                         <label
-                            className="text-lg font-light"
+                            className="text-lg font-light dark:text-tertiary"
                             htmlFor="password"
                         >E-mail</label>
                         <input

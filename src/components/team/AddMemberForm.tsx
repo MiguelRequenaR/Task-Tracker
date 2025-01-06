@@ -40,7 +40,7 @@ export default function AddMemberForm() {
 
                 <div className="flex flex-col gap-2">
                     <label
-                        className="font-light text-xl"
+                        className="font-light text-xl dark:text-tertiary"
                         htmlFor="name"
                     >E-mail de usuario</label>
                     <input

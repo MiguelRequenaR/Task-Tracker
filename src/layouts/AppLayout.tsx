@@ -34,7 +34,7 @@ export default function AppLayout() {
                 <Outlet />
             </section>
 
-            <footer className="py-5 font-light text-primary">
+            <footer className="py-5 font-light text-primary dark:text-tertiary">
                 <p className="text-center">
                     &copy; 2021 Todos los derechos reservados {new Date().getFullYear()}
                 </p>
