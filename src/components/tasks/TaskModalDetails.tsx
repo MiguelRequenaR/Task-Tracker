@@ -91,24 +91,24 @@ export default function TaskModalDetails() {
                                 leaveFrom="opacity-100 scale-100"
                                 leaveTo="opacity-0 scale-95"
                             >
-                                <DialogPanel className="w-full max-w-4xl transform overflow-hidden rounded-2xl bg-white text-left align-middle shadow-xl transition-all p-16">
-                                    <p className='text-sm text-primary'>Agregada el: {""}
+                                <DialogPanel className="w-full max-w-4xl transform overflow-hidden rounded-2xl bg-white dark:bg-gray-900 dark:border text-left align-middle shadow-xl transition-all p-16">
+                                    <p className='text-sm text-primary dark:text-tertiary'>Agregada el: {""}
                                         <span className='text-secondary font-normal'>{formDate(data.createdAt)}</span>
                                     </p>
-                                    <p className='text-sm text-primary'>Última actualización: {""}
+                                    <p className='text-sm text-primary dark:text-tertiary'>Última actualización: {""}
                                         <span className='text-secondary font-normal'>{formDate(data.updatedAt)}</span>
                                     </p>
                                     
                                     <DialogTitle
                                         as="h3"
-                                        className="font-semibold text-4xl text-slate-600 my-5"
+                                        className="font-semibold text-4xl text-slate-600 dark:text-tertiary my-5"
                                     >{data.name}
                                     </DialogTitle>
-                                    <p className='text-md font-light text-primary mb-2'>Descripción: {data.description}.</p>
+                                    <p className='text-md font-light text-primary mb-2 dark:text-tertiary'>Descripción: {data.description}.</p>
 
                                     {data.completedBy.length ? (
                                         <>
-                                            <p className='text-xl text-primary mb-2'>Historial de cambios:</p>
+                                            <p className='text-xl text-primary mb-2 dark:text-tertiary'>Historial de cambios:</p>
 
                                             <ul className=' list-decimal list-inside'>
                                                 {data.completedBy.map ((activityLog) => (
@@ -124,7 +124,7 @@ export default function TaskModalDetails() {
 
 
                                     <div className='my-5 space-y-3'>
-                                        <label className='font-lith text-lg'>Estado Actual:</label>
+                                        <label className='font-lith text-lg dark:text-tertiary'>Estado Actual:</label>
                                         <select 
                                             className='w-full p-3 bg-white border border-gray-500 rounded-lg '
                                             //Valor por defecto es el estado actual

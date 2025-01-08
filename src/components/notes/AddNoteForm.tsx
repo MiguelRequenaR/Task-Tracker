@@ -46,7 +46,7 @@ export default function AddNoteForm() {
             <div className="flex flex-col gap-3">
                 <label 
                     htmlFor="content"
-                    className="font-light text-lg"
+                    className="font-light text-lg dark:text-tertiary"
                 >
                     Crear Nota
                 </label>
